@@ -44,6 +44,7 @@ app.get('/cart',routes.cart.reduce);
 app.get('/jiesuan',routes.order.add);  
 app.get('/order',routes.order.show);
 
+//启动服务应用
 app.listen(80);
 
 //var crypto=require('crypto');
