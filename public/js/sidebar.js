@@ -27,5 +27,4 @@ $(function(){
 		trigger:"click" 
 	});
 
-});//..
-//jiji
+});//nimenhao
