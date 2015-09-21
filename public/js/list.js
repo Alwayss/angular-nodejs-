@@ -22,5 +22,5 @@ document.getElementById("u").onmouseover=function(){
     document.getElementById("a").style.color="red";
 }
 
-//git测试
+//NIMN
 //git���������˲���
