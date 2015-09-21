@@ -22,6 +22,11 @@ document.getElementById("u").onmouseover=function(){
     document.getElementById("a").style.color="red";
 }
 
+<<<<<<< HEAD
 //NIMN
 //gitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½
 //æµ‹è¯•
+=======
+
+//git·þÎñÆ÷¿Í»§¶Ë²âÊÔ
+>>>>>>> 1cc5c3404c46fde49c1b90e4cee54a7462de906a
