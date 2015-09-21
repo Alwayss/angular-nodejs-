@@ -1,0 +1,33 @@
+var categoryModel=require('../models').categoryModel;
+
+exports.show=function(req,res){
+	categoryModel.find({},function(err,data){
+		if(err){
+			console.log(err);
+		}else{
+			res.send(data);
+		}
+	});
+};
+exports.add=function(req,res){
+	cate={
+		cName:req.body.cName
+	}
+	categoryModel.create(cate,function(err,data){
+		if(err){
+			console.log(err);
+		}else{
+			console.log(data);
+			res.send(200);
+		}
+	});
+};
+exports.del=function(req,res){
+	categoryModel.remove({_id:req.params.id},function(err){
+		if(err){
+			console.log(err);
+		}else{
+			res.send(200);
+		}
+	});
+}

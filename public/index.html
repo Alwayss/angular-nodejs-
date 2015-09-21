@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="js/angular.min.js"></script>
+	<script src="js/sidebar.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/yan.js"></script>
+</head>
+<body>
+<!--head start-->
+<header>
+   <div class="top">
+            <div class="top_content">
+                <span class="word_l">您好，欢迎来到玖玖电子商城!</span>
+                <a href="#" class="a_1">登录</a>
+                <a href="#" class="a_2">注册</a>
+                <div class="order" id="order" >
+                    <img src="images/text.png" class="i_1"/>
+                    <a href="#"style="color:white;text-align: center;"id="a">我的订单</a>
+                    <img src="images/sj.png" id="img_2"/>
+                    <ul id="u">
+                        <li><a style="color: white">待支付</a></li>
+                        <li><a style="color: white">已收货</a></li>
+                        <li><a style="color: white">待评价</a></li>
+                        <li><a style="color: white">修改订单</a></li>
+                    </ul>
+                </div>
+                <div class="car"><img src="images/che.png" class="i_1"/>购物车
+                    <img src="images/sj.png"/></div>
+                <a href="" class="a_3">帮助中心</a>
+                <span class="word_r">服务热线:400-999-888</span>
+            </div>
+        </div>
+        <div class="logo">
+            <div class="logo_content" ng-controller="Aaa" >
+                <img src="images/logo.png" style="margin-top: 35px;float:left"/>
+                <input type="text" class="text" ng-model="name" ng-keyup="change(name)" ng-mousedown="change('')" />
+                <input type="button"value="搜索" class="btn" ng-click="change(name)" ng-mousedown="change('')">
+                <span class="tip">热门搜索：华为荣耀、小米4、红米note、oppo全网通</span>
+                <ul style="margin-left:450px;margin-top:-16px;z-index: 1000;background-color: gainsboro;width:424px;position: absolute;">
+                    <li ng-repeat="d in data">{{d}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav_content">
+                <ul>
+                    <li class="first"><a><img src="images/diandian.png">商品分类</a></li>
+                    <li style="color:  #ff9933;"><a>首页</a></li>
+                    <li><a>积分商城</a></li>
+                    <li><a>活动资讯</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!--head endding-->
+
+<!--content start-->
+
+<!--侧边菜单栏部分-->
+<div class="con_top">
+    <!--侧边栏-->
+    <div class="w990">
+        <ul class="sidebar" ng-controller="kindCtrl">
+            <li ng-repeat="kind in phone">
+                <a href="javascript:">{{kind.gName}}</a>
+                <dl>
+                    <dd><a href="javascript:">{{kind.gName1}}系列</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <!--banner图-->
+    <div class="banner-box">
+        <div class="bd">
+            <ul>          	    
+                <li><a href="javascript:void(0);"><img src="images/banner.jpg" /></a></li>
+                <li><a href="javascript:void(0);"><img src="images/banner1.jpg" /></a></li>
+                <li><a href="javascript:void(0);"><img src="images/banner.jpg" /></a></li>
+                <li><a href="javascript:void(0);"><img src="images/banner1.jpg" /></a></li>
+            </ul>
+        </div>
+        <div class="banner-btn">
+            <a class="prev" href="javascript:void(0);"></a>
+            <a class="next" href="javascript:void(0);"></a>
+        </div>
+    </div>
+</div>
+
+<!--限时抢购-->
+<div class="con_center" ng-controller="phoneCtrl"  >
+  <h2>限时抢购</h2>
+  <ul class="con_center_phone" >
+     <li ng-repeat="apple in goods">
+        <a href="javascript:">
+          <img ng-src='{{apple.gImg}}'>
+          <span class="p_name">{{apple.gName}}</span>
+          <span class="p_price">¥{{apple.gPrice}}</span>
+        </a>
+     </li>
+  </ul>
+</div>
+
+<!--品牌特卖-->
+<div class="con_bottom" ng-controller="Aaa">
+    <h2>品牌特卖</h2>
+    <div class="con_bottom_odiv">
+        <ul>
+            <li class="bottom_odiv_oli" logo ds="米"><img src="images/小米2.png" /></li>
+            <li logo ds="三星"><img src="images/三星.png"/></li>
+            <li logo ds="OPPO"><img src="images/oppo.jpg" type="OPPO"/></li>
+            <li logo ds="LG"><img src="images/143977625987734135.png"/></li>
+            <li logo ds="魅族"><img src="images/143467596292585651.png"/></li>
+            <li logo ds="VIVO"><img src="images/143411703870140805.png"/></li>
+            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
+            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
+            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
+            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
+        </ul>
+    </div>
+    <div class="con_bottom_adiv">
+        <ul class="adiv_oul">
+            <li class="oul_oli"><img src="images/1.png"/></li>
+            <li class="oul_ali">
+                <img ng-src="{{arr[0].gImg}}"/>
+                <div><a href="#">{{arr[0].gName}}</a></div>
+                <h3>{{arr[0].gPrice}}</h3>
+            </li>
+            <li class="oul_ali">
+                <img ng-src="{{arr[1].gImg}}" />
+                <div><a href="#">{{arr[1].gName}}</a></div>
+                <h3>{{arr[1].gPrice}}</h3>
+            </li>
+        </ul>
+        <ul class="adiv_oul">
+            <li class="oul_ali">
+                <img ng-src="{{arr[2].gImg}}" />
+                <div><a href="#">{{arr[2].gName}}</a></div>
+                <h3>{{arr[2].gPrice}}</h3>
+            </li>
+            <li class="oul_ali">
+                <img ng-src="{{arr[3].gImg}}" />
+                <div><a href="#">{{arr[3].gName}}</a></div>
+                <h3>{{arr[3].gPrice}}</h3>
+            </li>
+            <li class="oul_bli">
+                <img ng-src="{{arr[4].gImg}}" />
+                <div><a href="#">{{arr[4].gName}}</a></div>
+                <h3>{{arr[4].gPrice}}</h3>
+            </li>
+            <li class="oul_bli">
+                <img ng-src="{{arr[5].gImg}}"/>
+                <div><a href="#">{{arr[5].gName}}</a></div>
+                <h3>{{arr[5].gPrice}}</h3>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--服务-->
+<div class="ser">
+    <ul class="ser_oul">
+        <li class="beitua">
+            <h4>正品保障</h4>
+            <span>正品保障，提供发票</span>
+        </li >
+        <li class="beitub">
+            <h4>急速物流</h4>
+            <span>急速物流，急速送达</span>
+        </li>
+        <li class="beituc">
+            <h4>无忧售后</h4>
+            <span>7天无理由退货</span>
+        </li>
+        <li class="beitud">
+            <h4>特色服务</h4>
+            <span>私人订制家电套餐</span>
+        </li>
+        <li class="beitue">
+            <h4>帮助中心</h4>
+            <span>您的购物指南</span>
+        </li>
+    </ul>
+    <ul class="ser_aul">
+        <li class="ser_aul_li">
+            <ul>
+                <li><h5>购物指南</h5></li>
+                <li><a href="#">导购演示</a></li>
+                <li><a href="#">免费注册</a></li>
+                <li><a href="#">会员等级</a></li>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">品牌大全</a></li>
+            </ul>
+        </li>
+        <li class="ser_aul_li">
+            <ul>
+                <li><h5>支付方式</h5></li>
+                <li><a href="#">网银支付</a></li>
+                <li><a href="#">快捷支付</a></li>
+                <li><a href="#">分期付款</a></li>
+                <li><a href="#">货到付款</a></li>
+                <li><a href="#">任性付支付</a></li>
+            </ul>
+        </li>
+        <li class="ser_aul_li">
+            <ul>
+                <li><h5>物流配送</h5></li>
+                <li><a href="#">免运费政策</a></li>
+                <li><a href="#">配送服务承诺</a></li>
+                <li><a href="#">签收验货</a></li>
+                <li><a href="#">物流查询</a></li>
+            </ul>
+        </li>
+        <li class="ser_aul_li">
+            <ul>
+                <li><h5>售后服务</h5></li>
+                <li><a href="#">退换货政策</a></li>
+                <li><a href="#">退换货流程</a></li>
+                <li><a href="#">购买延保服务</a></li>
+                <li><a href="#">退款说明</a></li>
+                <li><a href="#">退换货申请</a></li>
+                <li><a href="#">维修/保养</a></li>
+            </ul>
+        </li>
+        <li class="ser_aul_li">
+            <ul>
+                <li><h5>商家服务</h5></li>
+                <li><a href="#">商家入驻</a></li>
+                <li><a href="#">培训中心</a></li>
+                <li><a href="#">信息公告</a></li>
+                <li><a href="#">广告服务</a></li>
+                <li><a href="#">商家帮助</a></li>
+                <li><a href="#">服务市场</a></li>
+            </ul>
+        </li>
+        <li class="ser_aul_li">
+            <img src="images/erweima.jpg" />
+        </li>
+    </ul>
+</div>
+<!--content endding-->
+
+<!--footer start-->
+<div class="footer">
+    Copyright© 2002-2015 ，玖玖电子商务有限公司版权所有 苏ICP备10207551号 苏B2-20130376 出版物经营许可证新出发苏批字第A-243号
+</div>
+<!--footer endding-->
+
+</body>
+<script src="js/list.js"></script>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "superStore",
+  "version": "0.0.1",
+  "main": "app.js",
+  "description": "superStore",
+  "repository": {},
+  "dependencies": {
+    "async": "^1.4.2",
+    "body-parser": "^1.13.3",
+    "connect-mongo": "^0.8.2",
+    "express": "^4.13.3",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.11.3",
+    "mongoose": "^4.1.7"
+  },
+  "readme": "README.md"
+}
