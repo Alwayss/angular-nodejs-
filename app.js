@@ -35,7 +35,7 @@ app.post('/adminLogin',routes.admin.adminLogin);
 app.post('/register',routes.user.userReg);
 app.post('/login',routes.user.userLogin);
 app.get('/home',routes.goods.show);
-app.post('/goodsAdd/:id',routes.goods.add);
+app.post('/goodsAdd',routes.goods.add);
 app.get('/goodsDel/:id',routes.goods.del);
 app.get('/goodsDes/:id',routes.goods.Des);
 app.post('/goodsModify',routes.goods.modify);
@@ -44,7 +44,9 @@ app.get('/cart',routes.cart.add);
 app.get('/cart',routes.cart.reduce);
 app.get('/jiesuan',routes.order.add);  
 app.get('/order',routes.order.show);
-
+app.get('/category',routes.category.show);
+app.get('/categoryAdd',routes.category.add);
+app.get('/categoryDel',routes.category.del);
 //启动服务应用
 app.listen(80);
 
