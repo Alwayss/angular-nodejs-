@@ -63,7 +63,7 @@ var tasks=[
     'cleanGoods',
     'initGoods',
 ];
-//初始化
+//初始化1
 var methods={
     cleanAdmins: function (callback) {
         models.adminModel.remove({}, function (err) {
