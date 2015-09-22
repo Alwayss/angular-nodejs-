@@ -21,3 +21,4 @@ document.getElementById("u").onmouseover=function(){
     document.getElementById("img_2").src="images/sj_x.png";
     document.getElementById("a").style.color="red";
 }
+//
