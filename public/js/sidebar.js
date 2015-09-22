@@ -27,4 +27,9 @@ $(function(){
 		trigger:"click" 
 	});
 
+<<<<<<< HEAD
+});//nimenhao
+=======
 });
+//测试使用测试使用
+>>>>>>> 1cc5c3404c46fde49c1b90e4cee54a7462de906a
