@@ -2,6 +2,7 @@
  * Created by admin on 2015/9/22.
  */
 //限时抢购
+
 app.controller("phoneCtrl",function($scope){
     $scope.goods=[
         {gName:'Apple iphone6(16G)(银)',gPrice:'4288.00',gImg:'images/phone1_10.jpg'},
