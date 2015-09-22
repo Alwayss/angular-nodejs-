@@ -2,7 +2,7 @@ var userModel=require('../models').userModel;
 var crypto=require('crypto');
 
 exports.userReg=function(req,res){
-	var password=crypto.createHash('md5').update(req.body.password).digest('base64');
+	var password=crypto.createHash('md5').update(req.body.password).digest('hex');
 	var user={
 		username:req.body.username,
 		password:password,

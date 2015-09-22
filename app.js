@@ -7,7 +7,8 @@ var app=express();
 
 var routes=require('./routes');
 //连接数据库
-mongoose.connect("mongodb://127.0.0.1:27017/superStore");
+var config=require('./config');
+//mongoose.connect("mongodb://127.0.0.1:27017/superStore");
 
 app.use(express.static(require('path').join(__dirname+'/public')));  //设置静态资源路径
 

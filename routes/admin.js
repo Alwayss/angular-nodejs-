@@ -4,7 +4,7 @@ var crypto=require('crypto');
 
 //管理员登录
 exports.adminLogin=function(req,res){
-	var password=crypto.createHash('md5').update(req.body.password).digest('base64');
+	var password=crypto.createHash('md5').update(req.body.password).digest('hex');
 	adminModel.findOne({username:req.body.username},function(err,data){
 		if(data){
 			if(data.password==password){
