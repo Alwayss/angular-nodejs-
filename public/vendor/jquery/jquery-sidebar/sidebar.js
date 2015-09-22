@@ -1,15 +1,14 @@
 // JavaScript Document
 /*侧边栏*/
+/*焦点轮播*/	
 $(function(){
+
     $(".sidebar li").hover(function(e) {
+
         $(this).find("dl").css("display","block");
     },function(){
         $(this).find("dl").css("display","none");
     });
-})
-/*焦点轮播*/	
-$(function(){
-
 	$(".prev,.next").hover(function(){
 		$(this).stop(true,false).fadeTo("show",0.9);
 	},function(){
