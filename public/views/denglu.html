@@ -3,16 +3,16 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title></title>
-    <link type="text/css" href="css/denglu.css" rel="stylesheet">
-    <script src="vendor/angualr/angular.min.js"></script>
-    <script src="vendor/angualr/lodash.min.js"></script>
-    <script src="vendor/angualr/restangular.min.js"></script>
+    <link type="text/css" href="../css/denglu.css" rel="stylesheet">
+    <script src="../vendor/angualr/angular.min.js"></script>
+    <script src="../vendor/angualr/lodash.min.js"></script>
+    <script src="../vendor/angualr/restangular.min.js"></script>
 </head>
 <body  ng-controller="denglCtrl">
 <div class="dlbox">
-    <div class="dllogo"><img src="images/logo.png"/></div>
+    <div class="dllogo"><img src="../images/logo.png"/></div>
     <div class="dlcennrerbox">
-        <div class="dlcennrerbox_top"><img src="images/66.png"/></div>
+        <div class="dlcennrerbox_top"><img src="../images/66.png"/></div>
         <div>
             <form name="nForm">
               <input id="in1" class="dltext dltext_a" type="text" name="nText" value="32" placeholder="用户名/邮箱/手机号" ng-model="regText.name" required ng-pattern="/^[A-Za-z0-9_@.\u4e00-\u9fa5]{4,20}$/" ng-blur="change('regText',nForm.nText.$error)"/>
@@ -34,9 +34,9 @@
         </div>
         <div class="dltup"></div>
         <ul class="dlcennteul">
-            <li><a href="#"><img src="images/33.png" /></a> </li>
-            <li><a href="#"><img src="images/44.png" /></a> </li>
-            <li><a href="#"><img src="images/55.png" /></a> </li>
+            <li><a href="#"><img src="../images/33.png" /></a> </li>
+            <li><a href="#"><img src="../images/44.png" /></a> </li>
+            <li><a href="#"><img src="../images/55.png" /></a> </li>
         </ul>
     </div>
 </div>
