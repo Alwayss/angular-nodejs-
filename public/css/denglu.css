@@ -1,0 +1,101 @@
+body,ul,li{margin:0;padding:0;}
+li{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color:#333333;
+}
+img{
+    border:none;
+    vertical-align:top;
+}
+/* 样式重置 */
+body{background:#f5f5f5 ;}
+.dlbox{
+   width: 1054px;
+    height: auto;
+   margin: 0 auto;
+}
+.dllogo{
+    width: 942px;
+    height: auto;
+    margin: 0 auto;
+}
+.dlcennrerbox{
+    width: 524px;
+    height: auto;
+    margin: 0 auto;
+}
+.dlcennrerbox_top{
+    width: 242px;
+    height: 124px;
+    margin: 0 auto 30px;
+}
+.dltext {
+    width: 474px;
+    height: 50px;
+    font-size: 16px;
+    color: #333333;
+    padding-left: 50px;
+    margin-bottom: 30px;
+    line-height: 60px;
+}
+.dltext_a{
+    background:#ffffff url("img/11.png") no-repeat 10px 12px;
+}
+.dltext_b{
+    background:#ffffff url("img/22.png") no-repeat 10px 12px;
+}
+.dlcheckbox {
+    width: 524px;
+    height: 26px;
+    margin-bottom: 30px;
+}
+.dlcheckbox input{
+    width: 26px;
+    height: 26px;
+
+}
+.dlcheckbox span{
+    height: 20px;
+    font-size: 16px;
+    position: relative;
+    bottom: 8px;
+}
+.dlbutton{
+    width: 524px;
+    height: 72px;
+    background: #ff9933;
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom:20px;
+}
+.dltup{
+    width: 650px;
+    height: 50px;
+    background: url("img/531.jpg") no-repeat 0 0;
+}
+.dlcennteul{
+    width: 524px;
+    height:100px;
+    margin: 0 auto;
+}
+.dlcennteul li{
+    float: left;
+    height: 40px;
+    width: 54px;
+    padding: 30px 60px;
+}
+.dlbuttonco{
+    width: 100%;
+    height:45px;
+    background: #666666;
+    line-height: 45px;
+    text-align: center;
+}
+.halo{
+    width: 524px;
+    height: 30px;
+    color: red;
+}
