@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../vendor/angualr/angular.min.js"></script>
+    <link type="text/css" href="../css/register.css" rel="stylesheet"/>
+</head>
+<body ng-controller="myController">
+<div class="banner">
+    <img src="../images/logo_1.png">
+    <span class="banner_text">我已有帐号，现在就去<a href="http://www.baidu.com" style="color:red">登录</a></span>
+</div>
+<div class="content">
+    <center>
+        <div ng-app>
+            <ng-form name=someForm>
+                &nbsp;用户名：<input name="username" placeholder="用户名必须是6-18个字母、数字或下划线" class="content_input1" type="text"
+                           ng-model="user.username" pattern="^\w{6,18}$" required>
+
+                <div class="alert-danger" ng-show="someForm.username.$error.pattern">
+                    用户名必须为6-18个字母、数字或下划线
+                </div>
+                <br>
+              &nbsp;&nbsp;密码：<input type="password" name="pwd" id="userPassword"
+                                                  placeholder="密码必须是6-12个字母、数字或下划线" class="content_input2" type="text"
+                                                  ng-model="user.password" pattern="^\w{6,12}$" requied>
+
+                <div class="alert-danger_1" ng-show="someForm.pwd.$error.pattern">
+                    密码必须为6-12个字母、数字或下划线
+                </div>
+                <br>
+                确认密码：<input id="passwordagain" type="password" placeholder="再次输入密码" class="content_input3"
+                            ng-model="user.repeatePassword" requied/><br>
+
+                <div class="alert-danger_2" ng-show="someForm.pwd.$valid && someForm.pwd.$dirty ">
+                    {{error}}
+
+                </div>
+                <button class="content_btn"
+                        ng-disabled="someForm.username.$invalid || someForm.pwd.$invalid || registerForm.passwordagain.$invalid "
+                        ng-click="show()">注册
+                </button>
+            </ng-form>
+        </div>
+
+
+    </center>
+</div>
+<hr>
+<div class="foot">Copyright@ 2002-2015,玖玖电子商务有限公司版权所有 苏ICP备10207551号</div>
+
+</body>
+
+<script src="../js/controllers/regist.js">
+
+</script>
+</html>
