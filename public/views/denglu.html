@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <title></title>
     <link type="text/css" href="../css/denglu.css" rel="stylesheet">
-    <script src="../vendor/angualr/angular.min.js"></script>
+    <script src="../vendor/angualr/angular.js"></script>
     <script src="../vendor/angualr/lodash.min.js"></script>
     <script src="../vendor/angualr/restangular.min.js"></script>
+
     <script src="../js/controllers/denglucontroller.js"></script>
     <script src="../js/services/api-proxy.js"></script>
 
@@ -20,11 +21,11 @@
             <form name="nForm">
               <input id="in1" class="dltext dltext_a" type="text" name="nText" value="32" placeholder="用户名/邮箱/手机号" ng-model="regText.name" required ng-pattern="/^[A-Za-z0-9_@.\u4e00-\u9fa5]{4,20}$/" ng-blur="change('regText',nForm.nText.$error)"/>
 
-              <span class="halo" ng-repeat=" re in regText.regList | filter : regText.regVal ">{{re.tips}}</span>
+              <div class="halo" ng-repeat=" re in regText.regList | filter : regText.regVal ">{{re.tips}}</div>
 
               <input id="in2" class="dltext dltext_b" type="password" name="nPassword" placeholder="密码" ng-minlength="6" ng-model="regPassword.name" required ng-minlength="6" ng-blur="change('regPassword',nForm.nPassword.$error)" />
 
-              <span class="halo" ng-repeat=" re in regPassword.regList | filter : regPassword.regVal ">{{ re.tips }}</span>
+              <div class="halo" ng-repeat=" re in regPassword.regList | filter : regPassword.regVal ">{{ re.tips }}</div>
 
               <div class="dlcheckbox"  ><input  type="checkbox" /><span>自动登录</span></div>
 

@@ -2,7 +2,7 @@
  * Created by admin on 2015/9/25.
  */
 //控制器部分
-var app = angular.module('app',['restangular']);   //注入restangular模块
+var app = angular.module('app',['restangular','api.proxy']);   //注入restangular模块
 
 app
     .controller('denglCtrl',['$scope','LoginService',function ($scope,LoginService) {
@@ -32,12 +32,12 @@ app
             /* res={
              message:'登录成功'
              }*/
-            if(data=='ok'){
+            if(res=='OK'){
                 //dsdsad
 
                 alert('登陆成功');
             }else{
-                alert(data.message);
+                alert(res.message);
             }
             //console.log(res.message);
         }, function (err) {

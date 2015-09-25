@@ -18,7 +18,7 @@ angular.module('api.proxy',['restangular'])
             }
 
         }
-    }]);
+    }])
     /*var type='';
     var timer = null;
     $scope.data = [];
@@ -43,8 +43,6 @@ angular.module('api.proxy',['restangular'])
     }).success(function(data){
         $scope.arr=data;
     });*/
-
-app
     .factory('LoginService',['Restangular',function(Restangular){// 现在我们已经在LoginService中访问了Restangular
     var loginAngular = Restangular.withConfig(function (Configurer) {
         //服务个性化配置
@@ -54,7 +52,7 @@ app
 
     return {
         userLogin: function (uers) {           //   user={username:xx ;  password:xxx}
-            return loginService.customPOST();  //定义一个请求的具体方法
+            return loginService.customPOST(uers);  //定义一个请求的具体方法
         },
     }
 }]);
