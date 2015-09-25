@@ -14,9 +14,9 @@ img{
 /* 样式重置 */
 body{background:#f5f5f5 ;}
 .dlbox{
-   width: 1054px;
+    width: 1054px;
     height: auto;
-   margin: 0 auto;
+    margin: 0 auto;
 }
 .dllogo{
     width: 942px;
@@ -39,12 +39,13 @@ body{background:#f5f5f5 ;}
     font-size: 16px;
     color: #333333;
     padding-left: 50px;
-    margin-top: 30px;
+    margin-top: 0px;
     line-height: 60px;
     border: 1px solid #c4c4c4;
 }
 .dltext_a{
     background:#ffffff url("../images/11.png") no-repeat 10px 12px;
+    margin-top: 26px;
 }
 .dltext_b{
     background:#ffffff url("../images/22.png") no-repeat 10px 12px;
@@ -60,7 +61,7 @@ body{background:#f5f5f5 ;}
 .dlcheckbox {
     width: 524px;
     height: 26px;
-    margin: 30px 0;
+    margin-bottom: 30px;
 }
 .dlcheckbox input{
     width: 26px;
@@ -104,3 +105,4 @@ body{background:#f5f5f5 ;}
     line-height: 45px;
     text-align: center;
 }
+
