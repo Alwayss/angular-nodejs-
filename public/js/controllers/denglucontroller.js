@@ -27,13 +27,14 @@ app
 
 
     $scope.login=function(){   //点击触发
-
-        LoginService.userLogin({username:'$scope.regText.name',password:'$scope.regPassword.name'}).then(function (res) {
+        //alert($scope.regText.name'+'$scope.regPassword.name);
+        LoginService.userLogin({username:$scope.regText.name,password:$scope.regPassword.name}).then(function (res) {
             /* res={
              message:'登录成功'
              }*/
             if(data=='ok'){
                 //dsdsad
+
                 alert('登陆成功');
             }else{
                 alert(data.message);
@@ -43,6 +44,7 @@ app
             alert(err.statusText);
         })
     }
+
 
     $scope.change = function( reg , err ){
         for(var attr in err){
