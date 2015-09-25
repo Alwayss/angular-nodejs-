@@ -1,8 +1,25 @@
 /**
  * Created by admin on 2015/9/22.
  */
-app.controller('Aaa',['$scope','$http','$timeout',function($scope,$http,$timeout){
-    var type='';
+angular.module('api.proxy',['restangular'])
+    .factory('HomeService',['Restangular',function(Restangular){// 现在我们已经在LoginService中访问了Restangular
+        var homeAngular = Restangular.withConfig(function (Configurer) {
+            //服务配置
+
+        });
+        var firstService=homeAngular.all('/goods'); //请求路径
+        var secondService=homeAngular.all('/goods');
+        return {
+            firstGoods: function () {            //定义请求方法
+                return firstService.customGETLIST('米');    
+            },
+            secondGoods:function(type){
+                return secondService.customGETLIST(type);
+            }
+
+        }
+    }])
+    /*var type='';
     var timer = null;
     $scope.data = [];
     $scope.change = function(name){
@@ -18,21 +35,24 @@ app.controller('Aaa',['$scope','$http','$timeout',function($scope,$http,$timeout
             });
         },500);
     };
-    $scope.arr=[];
+    $scope.arr=[];*/
     //默认加载第一个选项的内容
-    $http({
+    /*$http({
         method:'GET',
         url:'/goods?goodsname=米'
     }).success(function(data){
         $scope.arr=data;
+    });*/
+    .factory('LoginService',['Restangular',function(Restangular){// 现在我们已经在LoginService中访问了Restangular
+    var loginAngular = Restangular.withConfig(function (Configurer) {
+        //服务个性化配置
+
     });
-    //给选项卡的click方法添加处理事件
-    $scope.getData=function(type){
-        $http({
-            method:'GET',
-            url:'/goods?goodsname='+type
-        }).success(function(data){
-            $scope.arr=data;
-        });
+    var loginService=loginAngular.all('/adminLogin'); //定义loginService变量获取请求路径
+
+    return {
+        userLogin: function (uers) {           //   user={username:xx ;  password:xxx}
+            return loginService.customPOST(uers);  //定义一个请求的具体方法
+        },
     }
 }]);
