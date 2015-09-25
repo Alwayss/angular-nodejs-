@@ -30,7 +30,7 @@ app.use(function(req,res,next){           //将session绑定值本地session
 	next();
 });
 
-app.get('/goods',routes.goods.select);
+app.get('/goods/:goodsname',routes.goods.select);
 app.post('/adminLogin',routes.admin.adminLogin);
 app.post('/register',routes.user.userReg);
 app.post('/login',routes.user.userLogin);

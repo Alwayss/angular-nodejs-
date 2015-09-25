@@ -10,7 +10,7 @@ exports.show=function(req,res){       //商品显示
 	});
 };
 exports.select=function(req,res){
-	var name=req.query.goodsname;
+	var name=req.params.goodsname;
 	var pattern=new RegExp(name);
 	goodsModel.find({gName:pattern},function(err,data){
 		if(err){
