@@ -44,3 +44,17 @@ angular.module('api.proxy',['restangular'])
         $scope.arr=data;
     });*/
 
+app
+    .factory('LoginService',['Restangular',function(Restangular){// 现在我们已经在LoginService中访问了Restangular
+    var loginAngular = Restangular.withConfig(function (Configurer) {
+        //服务个性化配置
+
+    });
+    var loginService=loginAngular.all('/adminLogin'); //定义loginService变量获取请求路径
+
+    return {
+        userLogin: function (uers) {           //   user={username:xx ;  password:xxx}
+            return loginService.customPOST();  //定义一个请求的具体方法
+        },
+    }
+}]);
