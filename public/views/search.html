@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html ng-app="searchApp" ng-controller="searchCtrl">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../css/index.css" rel="stylesheet">
+    <script src="../vendor/angualr/angular.min.js"></script>
+    <script src="../vendor/angualr/lodash.min.js"></script>
+    <script src="../vendor/angualr/restangular.min.js"></script>
+    <style type="text/css">
+        .con_center ul {
+            margin-top: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            width: 990px;
+            height: auto;
+            list-style: none
+        }
+
+        .con_center ul li {
+            width: 195px;
+            height: 370px;
+            float: left
+        }
+        .con_center ul li a{
+           text-decoration: none
+        }
+        .ximg{
+            margin-top: 32px;
+        }
+        .x_describe{
+            margin-top:16px;
+            width:170px;
+            height:50px;
+            color: #808080;
+            font-family: sans-serif;
+            font-size:12px
+        }
+        .x_price{
+            color:#ff0000
+        }
+        .x_describe1{
+            font-family: 'Microsoft YaHei';
+            color: #808080;
+            font-size:12px;
+        }
+        .x_discuss{
+            font-family: 'Microsoft YaHei';
+            font-size: 12px;
+            color: #0066ff;
+            margin-left: 60px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="top">
+        <div class="top_content">
+            <span class="word_l">您好，欢迎来到玖玖电子商城!</span>
+            <a href="views/denglu.html" class="a_1">登录</a>
+            <a href="views/regist.html" class="a_2">注册</a>
+            <div class="order" id="order" >
+                <img src="../images/text.png" class="i_1"/>
+                <a href="#"style="color:white;text-align: center;"id="a">我的订单</a>
+                <img src="../images/sj.png" id="img_2"/>
+                <ul id="u">
+                    <li><a style="color: white">待支付</a></li>
+                    <li><a style="color: white">已收货</a></li>
+                    <li><a style="color: white">待评价</a></li>
+                    <li><a style="color: white">修改订单</a></li>
+                </ul>
+            </div>
+            <div class="car"><img src="../images/che.png" class="i_1"/>购物车
+                <img src="../images/sj.png"/></div>
+            <a href="" class="a_3">帮助中心</a>
+            <span class="word_r">服务热线:400-999-888</span>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo_content">
+            <img src="../images/logo.png" style="margin-top: 35px;float:left"/>
+            <input list="phone" type="text" class="text" ng-model="name" disabled />
+            <input type="button"value="搜索" class="btn" disabled="disabled"/>
+            <span class="tip">热门搜索：华为荣耀、小米4、红米note、oppo全网通</span>
+            <datalist id="phone">
+                <option value="oppo">oppo</option>
+                <option value="iphone">iphone</option>
+                <option value="iphone4">iphone4</option>
+                <option value="小米">小米</option>
+            </datalist>
+        </div>
+    </div></header>
+<div style="width:100%;height:40px;background-color:#f2f2f2"></div>
+<div class="con_center" >
+    <ul>
+        <li ng-repeat="mobile in xiaomi">
+            <a href="">
+                <img ng-src='{{mobile.gImg}}' class="ximg">
+                <div class="x_describe">
+                    小米&nbsp;
+                    <span style="color:#ff0000;font-family: 'Microsoft YaHei';font-weight: bold">4.2GB</span>内存版 &nbsp;白色&nbsp;
+                    <span style="color:#ff0000;font-family: 'Microsoft YaHei';font-weight: bold">移动4G</span>手机正品行货，全国联保！
+                </div>
+                <span class="x_price">¥{{mobile.price}}</span>
+
+                <div><span class="x_describe1">武汉有货</span>
+                    <a class="x_discuss">{{mobile.discuss}}</a>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+   /* var app = angular.module('searchApp',['restangular']);//查询所有项目的功能
+
+    app .factory('UnitService', ['Restangular', function (Restangular) {
+        var unitAngular = Restangular.withConfig(function (Configurer) {
+            //服务个性化配置
+        });
+        var unitService = unitAngular.all('/');
+        return{
+            getgoods:function(){
+                return unitService.customGET();
+            }
+        }
+    }])
+
+    app.controller('myController', ['$scope', 'UnitService',function ($scope, UnitService) {
+        UnitService.getgoods().then(function (res) {
+            $scope.xiaomi={
+                gImg:"vivo",
+                describe:"",
+                 price:"2000",
+                discuss:"一条评论"
+            }*/
+   angular.module('searchApp',[]).controller(
+           'searchCtrl',function($scope){
+               $scope.xiaomi=[{
+                   gImg:"../images/小米.jpg",
+                   price:"1234",
+                   discuss:"一条评论"
+               },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   },
+                   {
+                       gImg:"../images/小米.jpg",
+                       price:"1234",
+                       discuss:"一条评论"
+                   }
+
+
+
+
+
+               ]})
+   /*var app = angular.module('searchApp',['restangular']);//查询所有项目的功能
+
+   app .factory('UnitService', ['Restangular', function (Restangular) {
+       var unitAngular = Restangular.withConfig(function (Configurer) {
+           //服务个性化配置
+       });
+       var unitService = unitAngular.all('/');
+       return{
+           getgoods:function(){
+               return unitService.customGET();
+           }
+       }
+   }])
+
+   app.controller('searchCtrl', ['$scope', 'UnitService',function ($scope, UnitService) {
+       UnitService.getgoods().then(function (res) {
+           $scope.xiaomi=[{
+               gImg:"../images/小米.jpg",
+               price:"1234",
+               discuss:"一条评论"
+           },
+               {
+                   gImg:"../images/小米.jpg",
+                   price:"1234",
+                   discuss:"一条评论"
+               },
+               {
+                   gImg:"../images/小米.jpg",
+                   price:"1234",
+                   discuss:"一条评论"
+               },
+               {
+                   gImg:"../images/小米.jpg",
+                   price:"1234",
+                   discuss:"一条评论"
+               },
+               {
+                   gImg:"../images/小米.jpg",
+                   price:"1234",
+                   discuss:"一条评论"
+               },
+               {
+                   gImg:"../images/小米.jpg",
+                   price:"1234",
+                   discuss:"一条评论"
+               }
+
+
+
+
+
+           ]
+
+       }, function (err) {
+
+       })}
+
+   ])*/
+</script>
+</html>
