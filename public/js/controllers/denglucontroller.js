@@ -27,7 +27,7 @@ app
 
 
     $scope.login=function(){   //点击触发
-        //alert($scope.regText.name'+'$scope.regPassword.name);
+        alert($scope.regPassword.name);
         LoginService.userLogin({username:$scope.regText.name,password:$scope.regPassword.name}).then(function (res) {
             /* res={
              message:'登录成功'

@@ -5,15 +5,20 @@
     <title></title>
     <script src="../vendor/angualr/angular.min.js"></script>
     <link type="text/css" href="../css/register.css" rel="stylesheet"/>
+    <script src="../vendor/angualr/lodash.min.js"></script>
+    <script src="../vendor/angualr/restangular.min.js"></script>
+    <script src="../js/services/api-proxy.js"></script>
+    <script src="../js/controllers/regist.js">
+    </script>
 </head>
 <body ng-controller="myController">
 <div class="banner">
-    <img src="../images/logo_1.png">
-    <span class="banner_text">我已有帐号，现在就去<a href="http://www.baidu.com" style="color:red">登录</a></span>
+    <img src="../images/logo1.png">
+    <span class="banner_text">我已有帐号，现在就去<a href="../views/denglu.html" style="color:red">登录</a></span>
 </div>
 <div class="content">
     <center>
-        <div ng-app>
+        <div>
             <ng-form name=someForm>
                 &nbsp;用户名：<input name="username" placeholder="用户名必须是6-18个字母、数字或下划线" class="content_input1" type="text"
                            ng-model="user.username" pattern="^\w{6,18}$" required>
@@ -51,8 +56,4 @@
 <div class="foot">Copyright@ 2002-2015,玖玖电子商务有限公司版权所有 苏ICP备10207551号</div>
 
 </body>
-
-<script src="../js/controllers/regist.js">
-
-</script>
 </html>

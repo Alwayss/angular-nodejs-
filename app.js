@@ -48,7 +48,7 @@ app.get('/category',routes.category.show);
 app.get('/categoryAdd',routes.category.add);
 app.get('/categoryDel',routes.category.del);
 //启动服务应用
-app.listen(80);
+app.listen(8000);
 
 //var crypto=require('crypto');
 //var password=crypto.createHash('md5').update('123456').digest('base64');

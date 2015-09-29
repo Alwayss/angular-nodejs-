@@ -6,7 +6,7 @@ module.exports={
 	},
 	user:{                 //用户表的基本属性字段
 		username: {type: String, unique: true},   //用户名
-	    password: {type: String, select: false},   //密码
+	    password: {type: String},   //密码
 	    telphone: {type:Number},              //联系电话
 	    email: {type:String}
 	}, 

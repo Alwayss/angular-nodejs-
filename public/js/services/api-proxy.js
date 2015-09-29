@@ -48,11 +48,23 @@ angular.module('api.proxy',['restangular'])
         //服务个性化配置
 
     });
-    var loginService=loginAngular.all('/adminLogin'); //定义loginService变量获取请求路径
+    var loginService=loginAngular.all('/login'); //定义loginService变量获取请求路径
 
     return {
         userLogin: function (uers) {           //   user={username:xx ;  password:xxx}
             return loginService.customPOST(uers);  //定义一个请求的具体方法
-        },
+        }
     }
-}]);
+}])
+
+    .factory('registerService', ['Restangular', function (Restangular) {
+        var unitAngular = Restangular.withConfig(function (Configurer) {
+            //服务个性化配置
+        });
+        var unitService = unitAngular.all('/register');
+        return{
+            addusers:function (user) {
+                return unitService.customPOST(user);
+            }
+        }
+    }])
