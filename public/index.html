@@ -61,12 +61,18 @@
         <div class="logo">
             <div class="logo_content" ng-controller="Aaa" >
                 <img src="images/logo.png" style="margin-top: 35px;float:left"/>
-                <input type="text" class="text" ng-model="name" ng-keyup="change(name)" ng-mousedown="change('')" />
+                <input list="phone" type="text" class="text" ng-model="name" ng-keyup="change(name)" ng-mousedown="change('')" />
                 <input type="button"value="搜索" class="btn" ng-click="change(name)" ng-mousedown="change('')">
                 <span class="tip">热门搜索：华为荣耀、小米4、红米note、oppo全网通</span>
                 <ul style="margin-left:450px;margin-top:-16px;z-index: 1000;background-color: gainsboro;width:424px;position: absolute;">
                     <li ng-repeat="d in data">{{d}}</li>
                 </ul>
+                <datalist id="phone">
+                    <option value="oppo">oppo</option>
+                    <option value="iphone">iphone</option>
+                    <option value="iphone4">iphone4</option>
+                    <option value="红米">红米</option>
+                </datalist>
             </div>
         </div>
         <div class="nav">
