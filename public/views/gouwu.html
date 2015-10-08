@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html ng-app="gwApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+   <link href="../css/index.css" rel="stylesheet">
+    <link type="text/css" href="../css/gouwu.css" rel="stylesheet">
+    <!--jquery-->
+    <script src="../vendor/jquery/jquery-1.8.3.min.js"></script>
+    <script src="../vendor/jquery/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="../vendor/jquery/jquery-list/gouwulist.js"></script>
+    <!--angualr-->
+    <script src="../vendor/angualr/angular.min.js"></script>
+    <script src="../js/controllers/gw_angularjs.js"></script>
+</head>
+<body ng-controller="gwaa">
+<div class="top">
+    <div class="top_content">
+        <span class="word_l"><a href="javascript;">返回玖玖电子商城首页</a></span>
+        <a href="../views/denglu.html" class="a_1">登录</a>
+        <a href="../views/regist.html" class="a_2">注册</a>
+        <div class="order" id="order" >
+            <img src="../images/text.png" class="i_1"/>
+            <a href="#"style="color:white;text-align: center;"id="a">我的订单</a>
+            <img src="../images/sj.png" id="img_2"/>
+            <ul id="u">
+                <li><a style="color: white">待支付</a></li>
+                <li><a style="color: white">已收货</a></li>
+                <li><a style="color: white">待评价</a></li>
+                <li><a style="color: white">修改订单</a></li>
+            </ul>
+        </div>
+        <div class="car"><img src="../images/che.png" class="i_1"/>购物车
+            <img src="../images/sj.png"/></div>
+        <a href="javascript;" class="a_3">帮助中心</a>
+        <span class="word_r">服务热线:400-999-888</span>
+    </div>
+</div>
+<div class="gwcentt">
+    <div class="gwcentt_text">
+        <img src="../images/logo3.png" />
+        <ul class="gwcentt_ul">
+            <li class="gwcentt_ul_lia">
+                <p>
+                    <span>1</span>
+                </p>
+                <div>我的购物车</div>
+            </li >
+            <li class="gwcentt_ul_lib">
+                <p>
+                <span>2</span>
+                </p>
+                <div>确认订单</div>
+            </li>
+            <li class="gwcentt_ul_lib">
+                <p>
+                    <span>3</span>
+                </p>
+                <div>付款</div>
+            </li>
+            <li class="gwcentt_ul_lib">
+                <p>
+                    <span>4</span>
+                </p>
+                <div>支付成功</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div >
+<div class="gwbottom">
+    <ul class="gwbottom_top">
+        <li class="gwbottom_top_lia">
+            <input id="opur" class="gwcheckbox" type="checkbox"
+                   ng-model="ss"
+                   ng-true-value="1"
+                   ng-false-value="0"
+                   ng-click="oput()" />
+            <span>全选</span>
+        </li>
+        <li class="gwbottom_top_lib">
+            <span>商品信息</span>
+        </li>
+        <li class="gwbottom_top_lib">
+            <span>单价</span>
+        </li>
+        <li class="gwbottom_top_lib">
+            <span>送货至</span>
+            <input class="gwinputtext" type="text" />
+        </li>
+        <li class="gwbottom_top_lib">
+            <span>数量</span>
+        </li>
+        <li class="gwbottom_top_lib">
+            <span>单价</span>
+        </li>
+        <li class="gwbottom_top_lib">
+            <span>小计</span>
+        </li>
+    </ul>
+</div>
+<div class="gwtext">
+    <div class="gwtext_diva">
+        <span><a href="javascript;">联系我们</a></span>
+    </div>
+    <ul class="gwtext_divb" >
+        <li class="gwdivb">
+            <ul>
+                <li>
+                    <input  id="haoi" type="checkbox" ng-model="hh"
+                                                      ng-true-value="1"
+                                                      ng-false-value="0"
+                                                      ng-change="change()"/>
+                    <img src="../images/2.png"/>
+                </li>
+                <li><a>{{iphone.halo}}</a></li>
+                <li>{{iphone.money| currency:'￥'}}</li>
+                <li>{{iphone.hedl}}</li>
+                <li>
+                    <span  ng-click="wgjia()">-</span>
+                    <span>{{iphone.num}}</span>
+                    <span ng-click="wgjian()">+</span>
+                </li>
+                <li>{{iphone.money | currency:'￥'}}</li>
+                <li >{{ sum() | currency:'￥' }}</li>
+            </ul>
+            <ul>
+                <li>
+                    <input  id="haoii" type="checkbox" ng-model="gg"
+                                                       ng-true-value="1"
+                                                       ng-false-value="0"
+                                                       ng-change="change()"/>
+                    <img src="../images/2.png"/>
+                </li>
+                <li><a>{{iphonea.halo}}</a></li>
+                <li>{{iphonea.money| currency:'￥'}}</li>
+                <li>{{iphonea.hedl}}</li>
+                <li>
+                    <span  ng-click="wgjiaa()">-</span>
+                    <span >{{iphonea.numa}}</span>
+                    <span  ng-click="wgjiana()">+</span>
+                </li>
+                <li>{{iphonea.money | currency:'￥'}}</li>
+                <li id="hwd">{{ suma() | currency:'￥' }}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="gwjs">
+    <div class="gwjs_a">
+        <ul class="gwjs_ula">
+            <li class="gwjs_ula_a">已选择<span>{{zz}}</span>件商品</li>
+            <li>商品金额：<span class="gwjs_ula_spana">{{zhg | currency:'￥'}}</span></li>
+            <li>运费:<span class="gwjs_ula_spana">{{iphone.fre }}</span></li>
+        </ul>
+        <ul class="gwjs_ulb">
+            <li class="gwjs_ulb_b">应付金额：<span class="gwjs_ula_spana">{{zhggg | currency:'￥'}}</span></li>
+            <li><input type="button" value="去结算" /></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
