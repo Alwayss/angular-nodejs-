@@ -53,6 +53,7 @@ exports.Des=function(req,res){
 		if(err){
 			console.log(err);
 		}else{
+			console.log(data);
 			res.send(data);
 		}
 	})

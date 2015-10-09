@@ -1,5 +1,5 @@
-var app = angular.module('myApp',[]);
-app.controller('myController', function ($scope) {
+var app = angular.module('myApp',['restangular','api.proxy','ui.router']);
+app.controller('myController',['$scope','registerService','$state','$location',function ($scope,registerService,$state,$location) {
 
         $scope.user = {};
         $scope.show = function () {
@@ -19,7 +19,18 @@ app.controller('myController', function ($scope) {
                 }
             };
 
+        };
+        $scope.show=function(){
+            registerService.addusers({username:$scope.user.username,password:$scope.user.password}).then(function (res) {
+                console.log("注册成功");
+                alert("注册成功");
+              // window.location.href("index.html");
+              $state.go('content')
+
+            }, function (err) {
+                console.log("注册失败");
+            })
         }
 
-    }
-)
+    }]
+);

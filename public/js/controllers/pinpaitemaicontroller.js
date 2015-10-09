@@ -4,7 +4,10 @@
 //var app=angular.module("myApp",['ngRoute','restangular','api-proxy']);
 
 //控制器部分`
-app.controller('Aaa',['$scope','HomeService',function ($scope,HomeService) {
+app.controller('Aaa',['$scope',function ($scope) {
+
+}]);
+app.controller('jumpCtrl',['$scope','HomeService',function ($scope,HomeService) {
     //给选项卡的click方法添加处理事件
     var data=function(){           //页面首次加载所触发的请求事件
         HomeService.firstGoods().then(function(res){

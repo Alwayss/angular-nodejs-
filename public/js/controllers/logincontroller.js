@@ -5,7 +5,7 @@
 var app = angular.module('app',['restangular','api.proxy']);   //注入restangular模块
 
 app
-    .controller('denglCtrl',['$scope','LoginService',function ($scope,LoginService) {
+    .controller('denglCtrl',['$scope','LoginService','$location',function ($scope,LoginService,$location) {
     $scope.regText = {
         regVal : 'default',
         regList : [
@@ -33,9 +33,10 @@ app
              message:'登录成功'
              }*/
             if(res=='OK'){
-                //dsdsad
-
+                window.localStorage.setItem('username',$scope.regText.name);   //存储用户名
+                //window.localStorage.getItem('username');取值
                 alert('登陆成功');
+                $location.path('index.html');
             }else{
                 alert(res.message);
             }
@@ -43,7 +44,7 @@ app
         }, function (err) {
             alert(err.statusText);
         })
-    }
+    };
 
 
     $scope.change = function( reg , err ){

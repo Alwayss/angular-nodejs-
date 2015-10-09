@@ -5,5 +5,8 @@
 
 var app=angular.module('myApp', [
     'restangular',
-    'api.proxy'
+    'api.proxy',
+    'ui.router'
 ]);
+
+

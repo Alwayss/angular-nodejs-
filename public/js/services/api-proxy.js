@@ -53,6 +53,42 @@ angular.module('api.proxy',['restangular'])
     return {
         userLogin: function (uers) {           //   user={username:xx ;  password:xxx}
             return loginService.customPOST(uers);  //定义一个请求的具体方法
-        },
+        }
     }
-}]);
+}])
+    //加入购物车请求
+//.factory('JoincarService',['Restangular',function(Restangular){
+//    var joincarAngualr = Restangular.withConfig(function(Configurer){
+//
+//    });
+//    var joincarService=joincarAngualr.all('/addToCart');
+//    return {
+//        addToCart:function(id){
+//            return joincarService.customGET(id);
+//        }
+//    }
+//}])
+    //注册请求
+    .factory('registerService', ['Restangular', function (Restangular) {
+        var unitAngular = Restangular.withConfig(function (Configurer) {
+            //服务个性化配置
+        });
+        var unitService = unitAngular.all('/register');
+        return{
+            addusers:function (user) {
+                return unitService.customPOST(user);
+            }
+        }
+    }])
+    //获取id请求
+.factory('GetidService',['Restangular',function(Restangular){
+        var getidAngualr = Restangular.withConfig(function(Configurer){
+
+        });
+        var getidService=getidAngualr.all('/goodsDes');
+        return {
+            productId:function(id){
+                return getidService.customGET(id);
+            }
+        }
+    }]);

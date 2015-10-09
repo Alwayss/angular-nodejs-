@@ -1,0 +1,217 @@
+.w990 h4{ font-family:"Microsoft YaHei" ;font-size:14px; color:#999999; margin:20px 0;}
+
+.details{
+    width:990px;
+    height: 750px;
+    border:1px solid #cccccc;
+}
+.left{
+    float: left;
+    width: 419px;
+    height: 750px;
+    border-right:1px solid #cccccc;
+}
+.left_top{
+    width:420px;
+    height: 569px;
+    border-bottom:1px solid #cccccc;
+}
+.left_top img{margin: 20px 0 0 15px;}
+.left_botton{
+    width:420px;
+    height: 180px;
+}
+.banner-box
+{
+    width:420px;
+    height:180px;
+    position:relative;
+    overflow:hidden;
+}
+.banner-box .bd{width:370px; margin: 0 25px;}
+.banner-box .bd li{
+    float: left;
+    width:370px;
+    height: 93px;
+}
+.banner-box .bd li img {
+    float: left;
+    width:66px;
+    height: 93px;
+    border:1px solid #cccccc;
+    margin:40px 10px;
+    padding:2px;
+
+}
+.banner-box .bd li img:hover{border:1px solid #ff6600;}
+.banner-btn{position:absolute;top:70px;}
+.banner-btn a
+{
+    display:block;
+    width:25px;
+    height:38px;
+    position:absolute;
+    top:0;
+    filter:alpha(opacity=40);
+    -moz-opacity:0.4;
+    -khtml-opacity:0.4;
+    opacity:0.4;
+}
+.banner-btn a.prev{left:10px;background:url(../images/jiantou1_03.jpg) no-repeat 0 0;}
+.banner-btn a.next{right:10px;background:url(../images/jiantou2_05.jpg) no-repeat 0 0;}
+
+.right{
+    float: right;
+    width:570px;
+    height:750px;
+}
+.right_top{
+    width:557px;
+    height:489px ;
+    border-bottom:1px solid #cccccc;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color:#999999;
+    line-height: 60px;
+    padding-left:12px;
+    padding-top:10px;
+}
+.right_top h3{
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    color:#333333;
+}
+.right_top h4{color:#ff9933;margin: 0;}
+.orange{
+    position: relative;
+    left:-12px;
+    font-family: "Microsoft YaHei";
+    width:546px;
+    height: 120px;
+    background:url("../images/orbg.jpg") repeat-x 0  0;
+    color:#ffffff;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left:24px;
+}
+.orange  .one{
+    text-decoration: line-through;
+    font-size: 18px;
+}
+.orange .two {
+    font-size: 22px;
+}
+.orange .three{
+    display: inline-block;
+    width:70px;
+    height: 13px;
+    background: url("../images/xinxin_03.jpg") repeat-x;
+    margin-right: 10px;
+}
+.right_top .addres{
+    display: inline-block;
+    width:180px;
+    height: 30px;
+    font-size: 16px;
+    padding-left:10px;
+    border:1px solid #cccccc;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.right_top img{
+    padding:2px;
+    border:2px solid #cccccc;
+    margin: 0 20px;
+    vertical-align: middle;
+}
+.right_top .standard{
+   display: inline-block;
+    height: 30px;
+    padding:0 10px;
+    background: #faf8f8;
+    margin: 0px 10px 0 10px;
+    border:1px solid #cccccc;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.right_bottom{
+    font-family: "Microsoft YaHei";
+    color:#999999;
+    text-indent: 12px;
+    line-height: 50px;
+}
+
+.right_bottom .p{
+
+    width: 400px;
+    color: #000000;
+}
+
+.right_bottom button a{
+  display: inline-block;
+    width:190px;
+    height: 70px;
+    line-height: 70px;
+    color:#ffffff;
+    text-align: center;
+    font-size: 30px;
+}
+.right_bottom button{ margin:40px;}
+.right_bottom .buy{background:#ff9900;}
+.right_bottom .car{background:#ff6600;}
+
+.up{
+    display: none;
+    width:600px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -300px;
+    margin-top: -110px;
+    border: 1px solid #eeeeee;
+    background: #fff;
+}
+.up h4{
+    width: 600px;
+    height: 40px;
+    background: #eeeeee;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    text-indent: 10px;
+    line-height: 40px;
+    color:#666666;
+    position: relative;
+}
+.up h4 img{
+    position: absolute;
+    top:6px;
+    right:8px;
+}
+.up p {
+    width:600px;
+    height: 51px;
+    margin: 30px 0;
+    text-align: center;
+    line-height: 51px;
+    font-family: "Microsoft YaHei";
+    font-size: 24px;
+    color:#ff3300;
+    background: url("../images/gou_11.jpg") no-repeat 180px 0;
+}
+.up button a{
+    float: left;
+    height: 50px;
+    padding:0 20px;
+    color:#ffffff;
+    font-family: "Microsoft YaHei";
+    font-size: 24px;
+    line-height: 50px;
+}
+.up .goon{
+    background: #ff9900;
+    margin:0 60px 0 100px;
+}
+.up .gobuy{
+    background: #ff6633;
+}

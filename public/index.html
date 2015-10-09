@@ -13,25 +13,26 @@
     <script src="vendor/angualr/angular.min.js"></script>
     <script src="vendor/angualr/lodash.min.js"></script>
     <script src="vendor/angualr/restangular.min.js"></script>
-    <script src="js/services/api-proxy.js"></script>
+   <script src="js/services/api-proxy.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/config-route.js"></script>
     <!--services-->
     <!--controllers-->
     <script src="js/controllers/pinpaitemaicontroller.js"></script>
+    <script src="js/controllers/searchcontroller.js"></script>
     <!--directives-->
     <script src="js/directives/ui-logo.js"></script>
-
+<!--    <script src="vendor/jquery/jquery-sidebar/sidebar.js"></script>-->
     <script src="js/controllers/sidebarcontroller.js"></script>
     <script src="js/controllers/timelimitcontroller.js"></script>
 
-
-
     <!--route-->
     <script src="vendor/angualr/angular-route.min.js"></script>
-    <!--<script src="vendor/angualr/angular-ui-router.js"></script>-->
+    <script src="vendor/angualr/angular-ui-router.js"></script>
 
     <!--APP-->
-    <script src="js/config-route.js"></script>
+
+
 </head>
 <body>
 <!--head start-->
@@ -39,8 +40,9 @@
    <div class="top">
             <div class="top_content">
                 <span class="word_l">您好，欢迎来到玖玖电子商城!</span>
-                <a href="views/denglu.html" class="a_1">登录</a>
-                <a href="views/regist.html" class="a_2">注册</a>
+                <a href="views/login.html" class="a_1">登录</a>
+                <!--<a href="views/regist.html" class="a_2">注册</a>-->
+                <a ng-href="views/regist.html" class="a_2">注册</a>
                 <div class="order" id="order" >
                     <img src="images/text.png" class="i_1"/>
                     <a href="#"style="color:white;text-align: center;"id="a">我的订单</a>
@@ -61,15 +63,19 @@
         <div class="logo">
             <div class="logo_content" ng-controller="Aaa" >
                 <img src="images/logo.png" style="margin-top: 35px;float:left"/>
-                <input type="text" class="text" ng-model="name" ng-keyup="change(name)" ng-mousedown="change('')" />
-                <input type="button"value="搜索" class="btn" ng-click="change(name)" ng-mousedown="change('')">
+                <input list="phone" type="text" class="text" ng-model="name" />
+                <a href="javascript:" ui-sref=".search"><input type="button"value="搜索" class="btn" /></a>
                 <span class="tip">热门搜索：华为荣耀、小米4、红米note、oppo全网通</span>
-                <ul style="margin-left:450px;margin-top:-16px;z-index: 1000;background-color: gainsboro;width:424px;position: absolute;">
-                    <li ng-repeat="d in data">{{d}}</li>
-                </ul>
+                <datalist id="phone">
+                    <option value="oppo">oppo</option>
+                    <option value="iphone">iphone</option>
+                    <option value="iphone4">iphone4</option>
+                    <option value="小米">小米</option>
+                </datalist>
             </div>
         </div>
-        <div class="nav">
+
+    <div class="nav">
             <div class="nav_content">
                 <ul>
                     <li class="first"><a><img src="images/diandian.png">商品分类</a></li>
@@ -79,112 +85,24 @@
                 </ul>
             </div>
         </div>
-    </div>
-
 </header>
+<!--sidebar-->
+<div class="w990">
+    <ul class="sidebar" ng-controller="kindCtrl">
+        <li ng-repeat="kind in phone">
+            <a href="javascript:">{{kind.gName}}</a>
+            <dl>
+                <dd><a href="javascript:">{{kind.gName1}}系列</a></dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<script src="vendor/jquery/jquery-sidebar/sidebar.js"></script>
+<script src="vendor/jquery/jquery-sidebar/sidebar2.js"></script>
 <!--head endding-->
 
-<!--content start-->
-
-<!--侧边菜单栏部分-->
-<div class="con_top">
-    <!--侧边栏-->
-    <div class="w990">
-        <ul class="sidebar" ng-controller="kindCtrl">
-            <li ng-repeat="kind in phone">
-                <a href="javascript:">{{kind.gName}}</a>
-                <dl>
-                    <dd><a href="javascript:">{{kind.gName1}}系列</a></dd>
-                </dl>
-            </li>
-        </ul>
-    </div>
-    <!--banner图-->
-    <div class="banner-box">
-        <div class="bd">
-            <ul>          	    
-                <li><a href="javascript:void(0);"><img src="images/banner.jpg" /></a></li>
-                <li><a href="javascript:void(0);"><img src="images/banner1.jpg" /></a></li>
-                <li><a href="javascript:void(0);"><img src="images/banner.jpg" /></a></li>
-                <li><a href="javascript:void(0);"><img src="images/banner1.jpg" /></a></li>
-            </ul>
-        </div>
-        <div class="banner-btn">
-            <a class="prev" href="javascript:void(0);"></a>
-            <a class="next" href="javascript:void(0);"></a>
-        </div>
-    </div>
-</div>
-
-<!--限时抢购-->
-<div class="con_center" ng-controller="phoneCtrl"  >
-  <h2>限时抢购</h2>
-  <ul class="con_center_phone" >
-     <li ng-repeat="apple in goods">
-        <a href="javascript:">
-          <img ng-src='{{apple.gImg}}'>
-          <span class="p_name">{{apple.gName}}</span>
-          <span class="p_price">¥{{apple.gPrice}}</span>
-        </a>
-     </li>
-  </ul>
-</div>
-
-<!--品牌特卖-->
-<div class="con_bottom" ng-controller="Aaa">
-    <h2>品牌特卖</h2>
-    <div class="con_bottom_odiv">
-        <ul>
-            <li class="bottom_odiv_oli" logo ds="米" style="background: #ffffff;"><img src="images/小米2.png"/></li>
-            <li logo ds="三星"><img src="images/三星.png"/></li>
-            <li logo ds="OPPO"><img src="images/oppo.jpg" type="OPPO"/></li>
-            <li logo ds="LG"><img src="images/143977625987734135.png"/></li>
-            <li logo ds="魅族"><img src="images/143467596292585651.png"/></li>
-            <li logo ds="VIVO"><img src="images/143411703870140805.png"/></li>
-            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
-            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
-            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
-            <li logo ds="华为"><img src="images/142979023260528161.png" /></li>
-        </ul>
-    </div>
-    <div class="con_bottom_adiv">
-        <ul class="adiv_oul">
-            <li class="oul_oli"><img src="images/1.png"/></li>
-            <li class="oul_ali">
-                <img ng-src="{{arr[0].gImg}}"/>
-                <div><a href="#">{{arr[0].gName}}</a></div>
-                <h3>{{arr[0].gPrice}}</h3>
-            </li>
-            <li class="oul_ali">
-                <img ng-src="{{arr[1].gImg}}" />
-                <div><a href="#">{{arr[1].gName}}</a></div>
-                <h3>{{arr[1].gPrice}}</h3>
-            </li>
-        </ul>
-        <ul class="adiv_oul">
-            <li class="oul_ali">
-                <img ng-src="{{arr[2].gImg}}" />
-                <div><a href="#">{{arr[2].gName}}</a></div>
-                <h3>{{arr[2].gPrice}}</h3>
-            </li>
-            <li class="oul_ali">
-                <img ng-src="{{arr[3].gImg}}" />
-                <div><a href="#">{{arr[3].gName}}</a></div>
-                <h3>{{arr[3].gPrice}}</h3>
-            </li>
-            <li class="oul_bli">
-                <img ng-src="{{arr[4].gImg}}" />
-                <div><a href="#">{{arr[4].gName}}</a></div>
-                <h3>{{arr[4].gPrice}}</h3>
-            </li>
-            <li class="oul_bli">
-                <img ng-src="{{arr[5].gImg}}"/>
-                <div><a href="#">{{arr[5].gName}}</a></div>
-                <h3>{{arr[5].gPrice}}</h3>
-            </li>
-        </ul>
-    </div>
-</div>
+<!--content-->
+<div ui-view></div>
 
 <!--服务-->
 <div class="ser">
@@ -267,7 +185,7 @@
         </li>
     </ul>
 </div>
-<!--content endding-->
+
 
 <!--footer start-->
 <div class="footer">
@@ -276,6 +194,10 @@
 <!--footer endding-->
 
 </body>
-<script src="vendor/jquery/jquery-sidebar/sidebar.js"></script>
+<script src="js/controllers/productcontroller.js"></script>
 <script src="vendor/jquery/jquery-list/list.js"></script>
+<script src="vendor/jquery/jquery-prompt/promptbox.js"></script>
+<script src="js/controllers/sidebarcontroller.js"></script>
+<script src="vendor/jquery/jquery-sidebar/dateils-banner.js"></script>
+
 </html>

@@ -173,10 +173,10 @@ a{ text-decoration: none;}
 }
 /*sidebar*/
 .sidebar
-{   
+{   display: none;
     width:220px;
     height: 406px;
-    margin-top:10px;
+    margin-top:0;
 	position:absolute;
 	z-index:999;
 }
@@ -296,7 +296,7 @@ h2{
     line-height:72px;
     font-size: 18px;
     padding-left: 16px;
-    background: url("img/h2.jpg") no-repeat 0 19px;
+    background: url("../images/h2.jpg") no-repeat 0 19px;
 }
 .con_bottom_odiv{
     width:188px;
