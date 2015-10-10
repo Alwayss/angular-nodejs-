@@ -27,9 +27,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/login",
             templateUrl: "views/login.html"
         })
+        //注册
         .state("reg", {
             url: "/reg",
             templateUrl: "views/regist.html"
+        })
+        //购物车
+        .state("app.shoppingcart", {
+            url: "/shoppingcart",
+            templateUrl: "views/shoppingcart.html"
         })
         ;
         //加入购物车

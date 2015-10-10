@@ -8,6 +8,14 @@ app.controller('Aaa',['$scope','$localStorage','$state',function ($scope,$localS
         delete $localStorage.user;
         $scope.user=$localStorage.user;
     };
+
+    //判断是否已登录
+    $scope.ifloginin=function(){
+        if($scope.user!=''&& $scope.user!=undefined && $scope.user!=null){
+            $state.go('app.shoppingcart')
+        }else{$state.go('login')}
+    };
+
 }]);
 app.controller('jumpCtrl',['$scope','HomeService',function ($scope,HomeService) {
     //给选项卡的click方法添加处理事件
