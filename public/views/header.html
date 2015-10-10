@@ -1,0 +1,63 @@
+<header  ng-controller="Aaa" >
+    <div class="top">
+        <div class="top_content">
+            <span class="word_l">您好，欢迎来到玖玖电子商城!</span>
+            <a href="javascript:" ui-sref="login" class="a_1" ng-hide="user">登录</a>
+            <a href="javascript:" ui-sref="reg" class="a_2" ng-hide="user">注册</a>
+            <a href="javascript:" ng-show="user" class="a_1" style="color:#fff"><span ng-bind="user.name"></span></a>
+            <a ui-sref="app.content" ng-show="user" class="a_2" ng-click="clearuser()">退出</a>
+            <div class="order" id="order" >
+                <img src="images/text.png" class="i_1"/>
+                <a href="#"style="color:white;text-align: center;"id="a">我的订单</a>
+                <img src="images/sj.png" id="img_2"/>
+                <ul id="u">
+                    <li><a style="color: white">待支付</a></li>
+                    <li><a style="color: white">已收货</a></li>
+                    <li><a style="color: white">待评价</a></li>
+                    <li><a style="color: white">修改订单</a></li>
+                </ul>
+            </div>
+            <div class="car"><img src="images/che.png" class="i_1"/>购物车
+                <img src="images/sj.png"/></div>
+            <a href="" class="a_3">帮助中心</a>
+            <span class="word_r">服务热线:400-999-888</span>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo_content">
+            <img src="images/logo.png" style="margin-top: 35px;float:left"/>
+            <input list="phone" type="text" class="text" ng-model="name" />
+            <a href="javascript:" ui-sref=".search"><input type="button"value="搜索" class="btn" /></a>
+            <span class="tip">热门搜索：华为荣耀、小米4、红米note、oppo全网通</span>
+            <datalist id="phone">
+                <option value="oppo">oppo</option>
+                <option value="iphone">iphone</option>
+                <option value="iphone4">iphone4</option>
+                <option value="小米">小米</option>
+            </datalist>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="nav_content">
+            <ul>
+                <li class="first"><a><img src="images/diandian.png">商品分类</a></li>
+                <li style="color:  #ff9933;"><a>首页</a></li>
+                <li><a>积分商城</a></li>
+                <li><a>活动资讯</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--sidebar-->
+<div class="w990">
+    <ul class="sidebar" ng-controller="kindCtrl">
+        <li ng-repeat="kind in phone">
+            <a href="javascript:">{{kind.gName}}</a>
+            <dl>
+                <dd><a href="javascript:">{{kind.gName1}}系列</a></dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<script src="../vendor/jquery/jquery-list/list.js"></script>

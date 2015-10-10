@@ -1,54 +1,54 @@
-app.controller(
+ï»¿app.controller(
     'searchCtrl',function($scope){
         $scope.xiaomi=[{
             gImg:"../images/2.png",
             price:"1234",
-            discuss:"Ò»ÌõÆÀÂÛ"
+            discuss:"ä¸€æ¡è¯„è®º"
         },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             },
             {
                 gImg:"../images/2.png",
                 price:"1234",
-                discuss:"Ò»ÌõÆÀÂÛ"
+                discuss:"ä¸€æ¡è¯„è®º"
             }
 
 

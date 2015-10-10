@@ -1,11 +1,13 @@
-/**
- * Created by admin on 2015/9/18.
- */
-//var app=angular.module("myApp",['ngRoute','restangular','api-proxy']);
+
 
 //控制器部分`
-app.controller('Aaa',['$scope',function ($scope) {
+app.controller('Aaa',['$scope','$localStorage','$state',function ($scope,$localStorage,$state) {
+    $scope.user=$localStorage.user;
 
+    $scope.clearuser=function(){  //点击退出清除缓存
+        delete $localStorage.user;
+        $scope.user=$localStorage.user;
+    };
 }]);
 app.controller('jumpCtrl',['$scope','HomeService',function ($scope,HomeService) {
     //给选项卡的click方法添加处理事件
@@ -28,10 +30,6 @@ app.controller('jumpCtrl',['$scope','HomeService',function ($scope,HomeService) 
         })
     };
 
-
-
-
-
     $scope.change = function( reg , err ){
         for(var attr in err){
             if( err[attr] == true ){
@@ -42,14 +40,6 @@ app.controller('jumpCtrl',['$scope','HomeService',function ($scope,HomeService) 
         $scope[reg].regVal = 'pass';
     };
 
-    /*$scope.yy = function () {
-     if(document.getElementById('in1').value == 'yanyan123' &&document.getElementById('in2').value == '123yanyan'){
-     window.open('http://www.baidu.com','_self');
-     }
-     else{
-     alert('账号或密码不正确')
-     }
-     }*/
 }]);
 
 

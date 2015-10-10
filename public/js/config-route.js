@@ -1,21 +1,37 @@
 app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/content");  //默认加载content.html页面
+    $urlRouterProvider.when("", "/app/content");  //默认加载app.html页面
 
     $stateProvider
-        .state("content", {
-            url: "/content",
-            templateUrl: "views/content.html"
+
+        .state("app", {
+            abstract: true,
+            url: "/app",
+            templateUrl: "views/app.html"
+        })
+        .state('app.content', {
+            url: '/content',
+            templateUrl: 'views/content.html'
         })
         //点击商品进入详情页
-        .state("goodsDes", {
+        .state("app.goodsDes", {
             url: "/goodsDes/:id",
             templateUrl: "views/ProductDetails.html"
         })
         //搜索
-        .state("search", {
+        .state("app.search", {
             url: "/search",
             templateUrl: "views/search.html"
-        });
+        })
+        //登录
+        .state("login", {
+            url: "/login",
+            templateUrl: "views/login.html"
+        })
+        .state("reg", {
+            url: "/reg",
+            templateUrl: "views/regist.html"
+        })
+        ;
         //加入购物车
         //.state("addToCart", {
         //    url: "/addToCart",

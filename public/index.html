@@ -13,191 +13,34 @@
     <script src="vendor/angualr/angular.min.js"></script>
     <script src="vendor/angualr/lodash.min.js"></script>
     <script src="vendor/angualr/restangular.min.js"></script>
+    <script src="vendor/angualr/ngStorage.js"></script>
    <script src="js/services/api-proxy.js"></script>
     <script src="js/app.js"></script>
     <script src="js/config-route.js"></script>
     <!--services-->
-    <!--controllers-->
-    <script src="js/controllers/pinpaitemaicontroller.js"></script>
-    <script src="js/controllers/searchcontroller.js"></script>
+
     <!--directives-->
     <script src="js/directives/ui-logo.js"></script>
-<!--    <script src="vendor/jquery/jquery-sidebar/sidebar.js"></script>-->
-    <script src="js/controllers/sidebarcontroller.js"></script>
-    <script src="js/controllers/timelimitcontroller.js"></script>
 
     <!--route-->
-    <script src="vendor/angualr/angular-route.min.js"></script>
     <script src="vendor/angualr/angular-ui-router.js"></script>
 
     <!--APP-->
-
-
 </head>
+
 <body>
-<!--head start-->
-<header>
-   <div class="top">
-            <div class="top_content">
-                <span class="word_l">您好，欢迎来到玖玖电子商城!</span>
-                <a href="views/login.html" class="a_1">登录</a>
-                <!--<a href="views/regist.html" class="a_2">注册</a>-->
-                <a ng-href="views/regist.html" class="a_2">注册</a>
-                <div class="order" id="order" >
-                    <img src="images/text.png" class="i_1"/>
-                    <a href="#"style="color:white;text-align: center;"id="a">我的订单</a>
-                    <img src="images/sj.png" id="img_2"/>
-                    <ul id="u">
-                        <li><a style="color: white">待支付</a></li>
-                        <li><a style="color: white">已收货</a></li>
-                        <li><a style="color: white">待评价</a></li>
-                        <li><a style="color: white">修改订单</a></li>
-                    </ul>
-                </div>
-                <div class="car"><img src="images/che.png" class="i_1"/>购物车
-                    <img src="images/sj.png"/></div>
-                <a href="" class="a_3">帮助中心</a>
-                <span class="word_r">服务热线:400-999-888</span>
-            </div>
-        </div>
-        <div class="logo">
-            <div class="logo_content" ng-controller="Aaa" >
-                <img src="images/logo.png" style="margin-top: 35px;float:left"/>
-                <input list="phone" type="text" class="text" ng-model="name" />
-                <a href="javascript:" ui-sref=".search"><input type="button"value="搜索" class="btn" /></a>
-                <span class="tip">热门搜索：华为荣耀、小米4、红米note、oppo全网通</span>
-                <datalist id="phone">
-                    <option value="oppo">oppo</option>
-                    <option value="iphone">iphone</option>
-                    <option value="iphone4">iphone4</option>
-                    <option value="小米">小米</option>
-                </datalist>
-            </div>
-        </div>
-
-    <div class="nav">
-            <div class="nav_content">
-                <ul>
-                    <li class="first"><a><img src="images/diandian.png">商品分类</a></li>
-                    <li style="color:  #ff9933;"><a>首页</a></li>
-                    <li><a>积分商城</a></li>
-                    <li><a>活动资讯</a></li>
-                </ul>
-            </div>
-        </div>
-</header>
-<!--sidebar-->
-<div class="w990">
-    <ul class="sidebar" ng-controller="kindCtrl">
-        <li ng-repeat="kind in phone">
-            <a href="javascript:">{{kind.gName}}</a>
-            <dl>
-                <dd><a href="javascript:">{{kind.gName1}}系列</a></dd>
-            </dl>
-        </li>
-    </ul>
-</div>
-<script src="vendor/jquery/jquery-sidebar/sidebar.js"></script>
-<script src="vendor/jquery/jquery-sidebar/sidebar2.js"></script>
-<!--head endding-->
-
-<!--content-->
 <div ui-view></div>
-
-<!--服务-->
-<div class="ser">
-    <ul class="ser_oul">
-        <li class="beitua">
-            <h4>正品保障</h4>
-            <span>正品保障，提供发票</span>
-        </li >
-        <li class="beitub">
-            <h4>急速物流</h4>
-            <span>急速物流，急速送达</span>
-        </li>
-        <li class="beituc">
-            <h4>无忧售后</h4>
-            <span>7天无理由退货</span>
-        </li>
-        <li class="beitud">
-            <h4>特色服务</h4>
-            <span>私人订制家电套餐</span>
-        </li>
-        <li class="beitue">
-            <h4>帮助中心</h4>
-            <span>您的购物指南</span>
-        </li>
-    </ul>
-    <ul class="ser_aul">
-        <li class="ser_aul_li">
-            <ul>
-                <li><h5>购物指南</h5></li>
-                <li><a href="#">导购演示</a></li>
-                <li><a href="#">免费注册</a></li>
-                <li><a href="#">会员等级</a></li>
-                <li><a href="#">常见问题</a></li>
-                <li><a href="#">品牌大全</a></li>
-            </ul>
-        </li>
-        <li class="ser_aul_li">
-            <ul>
-                <li><h5>支付方式</h5></li>
-                <li><a href="#">网银支付</a></li>
-                <li><a href="#">快捷支付</a></li>
-                <li><a href="#">分期付款</a></li>
-                <li><a href="#">货到付款</a></li>
-                <li><a href="#">任性付支付</a></li>
-            </ul>
-        </li>
-        <li class="ser_aul_li">
-            <ul>
-                <li><h5>物流配送</h5></li>
-                <li><a href="#">免运费政策</a></li>
-                <li><a href="#">配送服务承诺</a></li>
-                <li><a href="#">签收验货</a></li>
-                <li><a href="#">物流查询</a></li>
-            </ul>
-        </li>
-        <li class="ser_aul_li">
-            <ul>
-                <li><h5>售后服务</h5></li>
-                <li><a href="#">退换货政策</a></li>
-                <li><a href="#">退换货流程</a></li>
-                <li><a href="#">购买延保服务</a></li>
-                <li><a href="#">退款说明</a></li>
-                <li><a href="#">退换货申请</a></li>
-                <li><a href="#">维修/保养</a></li>
-            </ul>
-        </li>
-        <li class="ser_aul_li">
-            <ul>
-                <li><h5>商家服务</h5></li>
-                <li><a href="#">商家入驻</a></li>
-                <li><a href="#">培训中心</a></li>
-                <li><a href="#">信息公告</a></li>
-                <li><a href="#">广告服务</a></li>
-                <li><a href="#">商家帮助</a></li>
-                <li><a href="#">服务市场</a></li>
-            </ul>
-        </li>
-        <li class="ser_aul_li">
-            <img src="images/erweima.jpg" />
-        </li>
-    </ul>
-</div>
-
-
-<!--footer start-->
-<div class="footer">
-    Copyright© 2002-2015 ，玖玖电子商务有限公司版权所有 苏ICP备10207551号 苏B2-20130376 出版物经营许可证新出发苏批字第A-243号
-</div>
-<!--footer endding-->
-
 </body>
-<script src="js/controllers/productcontroller.js"></script>
-<script src="vendor/jquery/jquery-list/list.js"></script>
-<script src="vendor/jquery/jquery-prompt/promptbox.js"></script>
-<script src="js/controllers/sidebarcontroller.js"></script>
+<script src="vendor/jquery/jquery-sidebar/sidebar.js"></script>
 <script src="vendor/jquery/jquery-sidebar/dateils-banner.js"></script>
+<script src="vendor/jquery/jquery-prompt/promptbox.js"></script>
 
+<!--controllers-->
+<script src="js/controllers/timelimitcontroller.js"></script>
+<script src="js/controllers/pinpaitemaicontroller.js"></script>
+<script src="js/controllers/productcontroller.js"></script>
+<script src="js/controllers/logincontroller.js"></script>
+<script src="js/controllers/sidebarcontroller.js"></script>
+<script src="js/controllers/searchcontroller.js"></script>
+<script src="js/controllers/regist.js"></script>
 </html>

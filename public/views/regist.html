@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <script src="../vendor/angualr/angular.min.js"></script>
-    <link type="text/css" href="../css/register.css" rel="stylesheet"/>
-    <script src="../vendor/angualr/lodash.min.js"></script>
-    <script src="../vendor/angualr/restangular.min.js"></script>
-    <script src="../js/services/api-proxy.js"></script>
-    <script src="../vendor/angualr/angular-route.min.js"></script>
-    <script src="../vendor/angualr/angular-ui-router.js"></script>
 
-    <script src="../js/controllers/regist.js"></script>
-    <!--<script src="../js/config-route.js"></script>-->
-</head>
-<body ng-controller="myController">
+<link type="text/css" href="../css/register.css" rel="stylesheet"/>
+
+
 <div class="banner">
     <img src="../images/logo1.png">
     <span class="banner_text">我已有帐号，现在就去<a href="../views/login.html" style="color:red">登录</a></span>
 </div>
-<div class="content">
+<div class="content"  ng-controller="myController">
     <center>
         <div>
             <ng-form name=someForm>
@@ -58,5 +45,3 @@
 <hr>
 <div class="foot">Copyright@ 2002-2015,玖玖电子商务有限公司版权所有 苏ICP备10207551号</div>
 
-</body>
-</html>

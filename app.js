@@ -32,8 +32,8 @@ app.use(function(req,res,next){           //将session绑定值本地session
 
 app.get('/goods/:goodsname',routes.goods.select);
 app.post('/adminLogin',routes.admin.adminLogin);
-app.post('/register',routes.user.userReg);
-app.post('/login',routes.user.userLogin);
+app.post('/userReg',routes.user.userReg);
+app.post('/userLogin',routes.user.userLogin);
 app.get('/home',routes.goods.show);
 app.post('/goodsAdd',routes.goods.add);
 app.get('/goodsDel/:id',routes.goods.del);

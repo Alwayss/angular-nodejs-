@@ -6,14 +6,13 @@ exports.userReg=function(req,res){
 	var user={
 		username:req.body.username,
 		password:password,
-		telphone:req.body.telphone,
-		email:req.body.email
 	};
 	userModel.findOne({username:user.username},function(err,data){
 		if(data){
 			res.send({code:1,message:'该用户已存在'});
 		}else{
 			userModel.create(user,function(err,data){
+
 				if(err){
 					console.log(err);
 				}else{
@@ -28,6 +27,7 @@ exports.userReg=function(req,res){
 exports.userLogin=function(req,res){
 	var password=crypto.createHash('md5').update(req.body.password).digest('hex');
 	userModel.findOne({username:req.body.username},function(err,data){
+		console.log(data);
 		if(data){
 			if(data.password==password){
 				req.session.user=data;

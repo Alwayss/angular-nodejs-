@@ -1,11 +1,8 @@
 /**
  * Created by admin on 2015/9/25.
  */
-//控制器部分
-var app = angular.module('app',['restangular','api.proxy']);   //注入restangular模块
-
 app
-    .controller('denglCtrl',['$scope','LoginService','$location',function ($scope,LoginService,$location) {
+    .controller('denglCtrl',['$scope','LoginService','$localStorage','$state',function ($scope,LoginService,$localStorage,$state) {
     $scope.regText = {
         regVal : 'default',
         regList : [
@@ -25,27 +22,22 @@ app
         ]
     };
 
-
+        $scope.user=$localStorage.user;
+        console.log($scope.user);
     $scope.login=function(){   //点击触发
-        //alert($scope.regText.name'+'$scope.regPassword.name);
-        LoginService.userLogin({username:$scope.regText.name,password:$scope.regPassword.name}).then(function (res) {
-            /* res={
-             message:'登录成功'
-             }*/
+          LoginService.userLogin({username:$scope.regText.name,password:$scope.regPassword.name}).then(function (res) {
             if(res=='OK'){
-                window.localStorage.setItem('username',$scope.regText.name);   //存储用户名
-                //window.localStorage.getItem('username');取值
+            //存储用户名
+                $localStorage.user={name:$scope.regText.name};
                 alert('登陆成功');
-                $location.path('index.html');
+                $state.go('app.content')
             }else{
                 alert(res.message);
             }
-            //console.log(res.message);
         }, function (err) {
             alert(err.statusText);
         })
     };
-
 
     $scope.change = function( reg , err ){
         for(var attr in err){
@@ -57,12 +49,5 @@ app
         $scope[reg].regVal = 'pass';
     };
 
-    /*$scope.yy = function () {
-     if(document.getElementById('in1').value == 'yanyan123' &&document.getElementById('in2').value == '123yanyan'){
-     window.open('http://www.baidu.com','_self');
-     }
-     else{
-     alert('账号或密码不正确')
-     }
-     }*/
+
 }]);

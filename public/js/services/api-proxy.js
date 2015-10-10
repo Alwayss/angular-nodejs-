@@ -19,40 +19,16 @@ angular.module('api.proxy',['restangular'])
 
         }
     }])
-    /*var type='';
-    var timer = null;
-    $scope.data = [];
-    $scope.change = function(name){
-        $timeout.cancel(timer);
-        timer = $timeout(function(){
-
-            $http({
-                method : 'JSONP',
-                url : 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+name+'&cb=JSON_CALLBACK'
-            }).success(function(data){
-                //console.log(data);
-                $scope.data = data.s;
-            });
-        },500);
-    };
-    $scope.arr=[];*/
-    //默认加载第一个选项的内容
-    /*$http({
-        method:'GET',
-        url:'/goods?goodsname=米'
-    }).success(function(data){
-        $scope.arr=data;
-    });*/
     .factory('LoginService',['Restangular',function(Restangular){// 现在我们已经在LoginService中访问了Restangular
     var loginAngular = Restangular.withConfig(function (Configurer) {
         //服务个性化配置
 
     });
-    var loginService=loginAngular.all('/adminLogin'); //定义loginService变量获取请求路径
+    var loginService=loginAngular.all('/userLogin'); //定义loginService变量获取请求路径
 
     return {
-        userLogin: function (uers) {           //   user={username:xx ;  password:xxx}
-            return loginService.customPOST(uers);  //定义一个请求的具体方法
+        userLogin: function (user) {           //   user={username:xx ;  password:xxx}
+            return loginService.customPOST(user);  //定义一个请求的具体方法
         }
     }
 }])
@@ -73,7 +49,7 @@ angular.module('api.proxy',['restangular'])
         var unitAngular = Restangular.withConfig(function (Configurer) {
             //服务个性化配置
         });
-        var unitService = unitAngular.all('/register');
+        var unitService = unitAngular.all('/userReg');
         return{
             addusers:function (user) {
                 return unitService.customPOST(user);

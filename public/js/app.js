@@ -6,7 +6,8 @@
 var app=angular.module('myApp', [
     'restangular',
     'api.proxy',
-    'ui.router'
+    'ui.router',
+    'ngStorage'
 ]);
 
 
