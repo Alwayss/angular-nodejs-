@@ -13,7 +13,7 @@ app.controller('Aaa',['$scope','$localStorage','$state',function ($scope,$localS
     $scope.ifloginin=function(){
         if($scope.user!=''&& $scope.user!=undefined && $scope.user!=null){
             $state.go('app.shoppingcart')
-        }else{$state.go('login')}
+        }else{alert("您还未登录"),$state.go('login')}
     };
 
 }]);
