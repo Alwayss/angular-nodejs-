@@ -12,12 +12,11 @@ exports.userReg=function(req,res){
 			res.send({code:1,message:'该用户已存在'});
 		}else{
 			userModel.create(user,function(err,data){
-
 				if(err){
 					console.log(err);
 				}else{
 					console.log(data);
-					res.send(200);
+					res.send({code:200,result:data});
 					req.session.user=data;
 				}
 			});
@@ -31,7 +30,7 @@ exports.userLogin=function(req,res){
 		if(data){
 			if(data.password==password){
 				req.session.user=data;
-				res.send(200);
+				res.send({code:200,result:data});
 			}else{
 				res.send({message:'用户名或密码错误'});
 			}
@@ -42,5 +41,5 @@ exports.userLogin=function(req,res){
 };
 exports.quit=function(req,res){
 	req.session.user = null;
-	res.redirect('/');
+	//res.redirect('/');
 };

@@ -8,12 +8,12 @@ exports.adminLogin=function(req,res){
 	adminModel.findOne({username:req.body.username},function(err,data){
 		if(data){
 			if(data.password==password){
-				res.send(200);
+				res.send({code:200,result:data});
 			}else{
-				res.send({message:'用户名或密码错误'});
+				res.send({code:404,result:'用户名或密码错误'});
 			}
 		}else{
-			res.send({message:'你为拥有管理员权限'});
+			res.send({code:403,result:'你为拥有管理员权限'});
 		}
 	});
 	/*var admin=url.parse(req.url,true).query;
