@@ -33,17 +33,16 @@ angular.module('api.proxy',['restangular'])
     }
 }])
     //加入购物车请求
-//.factory('JoincarService',['Restangular',function(Restangular){
-//    var joincarAngualr = Restangular.withConfig(function(Configurer){
-//
-//    });
-//    var joincarService=joincarAngualr.all('/addToCart');
-//    return {
-//        addToCart:function(id){
-//            return joincarService.customGET(id);
-//        }
-//    }
-//}])
+.factory('JoincarService',['Restangular',function(Restangular){
+    var joincarAngualr = Restangular.withConfig(function(Configurer){
+    });
+    var joincarService=joincarAngualr.all('/addToCart');
+    return {
+        productInfo:function(id){
+            return joincarService.customPOST(id);
+        }
+    }
+}])
     //注册请求
     .factory('registerService', ['Restangular', function (Restangular) {
         var unitAngular = Restangular.withConfig(function (Configurer) {
@@ -67,4 +66,17 @@ angular.module('api.proxy',['restangular'])
                 return getidService.customGET(id);
             }
         }
-    }]);
+    }])
+    //
+    .factory('SendidService',['Restangular',function(Restangular){
+        var sendidAngualr = Restangular.withConfig(function(Configurer){
+
+        });
+        var sendidService=sendidAngualr.all('/cart');
+        return {
+            userId:function(id){
+                return sendidService.customGET(id);
+            }
+        }
+    }])
+;

@@ -68,7 +68,7 @@
             <div class="gwtext_diva">
                 <span><a href="javascript;">联系我们</a></span>
             </div>
-            <ul class="gwtext_divb" >
+            <ul class="gwtext_divb" ng-repeat="product in cartArr">
                 <li class="gwdivb">
                     <ul>
                         <li>
@@ -78,36 +78,18 @@
                                     ng-change="change()"/>
                             <img src="../images/2.png"/>
                         </li>
-                        <li><a>{{iphone.halo}}</a></li>
-                        <li>{{iphone.money| currency:'￥'}}</li>
-                        <li>{{iphone.hedl}}</li>
+                        <li><a>{{product.gName}}</a></li>
+                        <li>{{product.gPrice| currency:'￥'}}</li>
+                        <li>武汉</li>
                         <li>
                             <span  ng-click="wgjia()">-</span>
-                            <span>{{iphone.num}}</span>
+                            <span>{{product.gQuantity}}</span>
                             <span ng-click="wgjian()">+</span>
                         </li>
-                        <li>{{iphone.money | currency:'￥'}}</li>
+                        <li>{{product.gPrice | currency:'￥'}}</li>
                         <li >{{ sum() | currency:'￥' }}</li>
                     </ul>
-                    <ul>
-                        <li>
-                            <input  id="haoii" type="checkbox" ng-model="gg"
-                                    ng-true-value="1"
-                                    ng-false-value="0"
-                                    ng-change="change()"/>
-                            <img src="../images/2.png"/>
-                        </li>
-                        <li><a>{{iphonea.halo}}</a></li>
-                        <li>{{iphonea.money| currency:'￥'}}</li>
-                        <li>{{iphonea.hedl}}</li>
-                        <li>
-                            <span  ng-click="wgjiaa()">-</span>
-                            <span >{{iphonea.numa}}</span>
-                            <span  ng-click="wgjiana()">+</span>
-                        </li>
-                        <li>{{iphonea.money | currency:'￥'}}</li>
-                        <li id="hwd">{{ suma() | currency:'￥' }}</li>
-                    </ul>
+
                 </li>
             </ul>
         </div>

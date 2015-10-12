@@ -2,43 +2,42 @@ var cartModel=require('../models').cartModel;
 var goodsModel=require('../models').goodsModel;
 
 
-exports.show=function(erq,res){
-	if(!req.session.user){
-		res.send({code:1,message:'用户已过期，请重新登录'});
-	}else{
-		cartModel.find({uId:req.session.user['_id']},function(err,data){
+exports.show=function(req,res){
+
+		cartModel.find({uid:req.params.id},function(err,data){
 			if(err){
 				console.log(err);
 			}else{
 				console.log(data);
-				res.send(200);
+				res.send({code:200,result:data});
 			}
 		});
-	}
+
 };
 exports.add=function(req,res){
-	cartModel.find({uId:req.session.user['_id'],gId:req.params.id},function(err,data){
+	console.log(req.body);
+	cartModel.findOne({gid:req.body.gid,uid:req.body.uid},function(err,data){
 		if(err){
 			console.log(err);
 		}else{
 			if(data){    //若购物车中存在该件商品，使其gQuantity加1
 				var num=data.gQuantity+1;
-				cartModel.update({uId:req.session.user['_id'],gId:req.params.id},{$set:{gQuantity:num}},function(err){
+				cartModel.update({uid:req.body.uid,gid:req.body.gid},{$set:{gQuantity:num}},function(err){
 					if(err){
 						console.log(err);
 					}else{
-						ses.send(200);
+						res.send(200);
 					}
 				});
 			}else{       //若不存在，在添加到购物车中
 				//从商品库中查询该商品的详细信息
-				goodsModel.findOne({_id:req.params.id},function(err,data){
+				goodsModel.findOne({_id:req.body.gid},function(err,data){
 					if(err){
 						console.log(err);
 					}else{
 						var goods={
-							uid: req.session.user['_id'],
-							gid: req.params.id,
+							uid: req.body.uid,
+							gid: req.body.gid,
 							gName: data.gName,
 					        gPrice: data.gPrice,
 					        gImgSrc: data.gImgSrc,

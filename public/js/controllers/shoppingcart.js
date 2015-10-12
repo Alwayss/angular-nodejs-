@@ -2,21 +2,19 @@
  * Created by admin on 2015/9/29.
  */
 
-app.controller('gwaa',['$scope',function ($scope) {
-    $scope.iphone = {
-        halo:"魅族MX5（M575)16GB银黑色移动联通4G手机",
-        hedl:"现货",
-        money : 2100,
-        num : 1,
-        fre : 0
+app.controller('gwaa',['$scope','SendidService','$localStorage',function ($scope,SendidService,$localStorage) {
+    var initCart=function(){
+        var uid=$localStorage.user.id;
+        SendidService.userId(uid).then(function(res){
+            if(res.code==200){
+                console.log(res.result);
+                $scope.cartArr=res.result;
+            }
+        }, function (err) {
+            alert("失败");
+        });
     };
-    $scope.iphonea = {
-        halo:"魅族MX5（M575)16GB银黑色移动联通4G手机",
-        hedl:"现货",
-        money : 3125,
-        numa:1
-    };
-
+    initCart();
     $scope.sum = function(){
         return $scope.iphone.money * $scope.iphone.num;
     };

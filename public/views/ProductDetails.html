@@ -2,7 +2,8 @@
 
 <!--main-->
 <link href="../css/ProductDetails.css" type="text/css" rel="stylesheet">
-<div class="w990" >
+
+<div class="w990">
         <h4>限时抢购>Apple iPhone 6（16G）（银）</h4>
         <div class="details">
             <div class="left">
@@ -26,7 +27,7 @@
                 <script src="../vendor/jquery/jquery-sidebar/dateils-banner.js"></script>
             </div>
 
-            <div class="right" ng-controller="des">
+            <div class="right"  ng-controller="des">
                <div class="right_top">
                  <h3>{{data.gName}}</h3>
                  <h4>5.5英寸大屏幕，3G运行内存，2070万+500万像素摄像头，3150mAh电池！</h4>
@@ -45,7 +46,7 @@
                <div class="right_bottom">
                    <p>您已选择:  {{colors}}  {{stas}}</p>
                  <button ><a class="buy" href="#"> 立即购买</a></button>
-                 <button ><a  class="car" href="#/addToCart/{{data['_id']}}">加入购物车</a></button>
+                 <button ><a  class="car" add ac="{{data['_id']}}" >加入购物车</a></button>
                </div>
             </div>
 
@@ -56,6 +57,6 @@
     <h4>温馨提示<img src="../images/xx_03.jpg"></h4>
     <p>添加成功</p>
     <button class="goon"><a href="../index.html"> 继续购物</a></button>
-    <button class="gobuy"><a href="javascript:">去购物车结算</a> </button>
+    <button class="gobuy"><a href="javascript:" ui-sref="app.shoppingcart">去购物车结算</a> </button>
 </div>
 
