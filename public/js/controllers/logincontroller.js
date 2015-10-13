@@ -26,9 +26,10 @@ app
         console.log($scope.user);
     $scope.login=function(){   //点击触发
           LoginService.userLogin({username:$scope.regText.name,password:$scope.regPassword.name}).then(function (res) {
-            if(res=='OK'){
+              var res=res;
+              if(res.code == 200){
             //存储用户名
-                $localStorage.user={name:$scope.regText.name};
+                $localStorage.user={id:res.result._id,name:res.result.username};
                 alert('登陆成功');
                 $state.go('app.content')
             }else{

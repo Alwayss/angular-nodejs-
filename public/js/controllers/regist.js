@@ -21,10 +21,15 @@ app.controller('myController',['$scope','registerService','$state','$localStorag
         };
         $scope.show=function(){
             registerService.addusers({username:$scope.user.username,password:$scope.user.password}).then(function (res) {
-                alert("注册成功");
-                $localStorage.user={name:$scope.user.username};
-               //window.location.href = $location.protocol() + "://" + $location.host() + ":" + $location.port();
-               $state.go('app.content')
+                if(res.code == 200) {
+                    //存储用户信息
+                    $localStorage.user = {id: res.result._id, name: res.result.username};
+                    alert('注册成功');
+                    $state.go('app.content');
+                    //window.location.href = $location.protocol() + "://" + $location.host() + ":" + $location.port();
+                }else{
+                    alert(res.message);
+                }
             }, function (err) {
                 console.log("注册失败");
             })

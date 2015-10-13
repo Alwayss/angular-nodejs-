@@ -12,13 +12,3 @@ app.directive('logo',function(){
         }
     }
 });
-//app.directive('chaborder',function(){
-//    return{
-//        restrict:"AE",
-//        link:function(scope,ele,attrs){
-//            ele.bind('click',function($http){
-//                ele.css("border","2px solid #000000")
-//            });
-//        }
-//    }
-//});
