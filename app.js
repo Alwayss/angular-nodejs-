@@ -34,13 +34,13 @@ app.get('/goods/:goodsname',routes.goods.select);
 app.post('/adminLogin',routes.admin.adminLogin);
 app.post('/userReg',routes.user.userReg);
 app.post('/userLogin',routes.user.userLogin);
-app.get('/home',routes.goods.show);
+app.get('/goods/page/:pageid',routes.goods.show);
 app.post('/goodsAdd',routes.goods.add);
 app.get('/goodsDel/:id',routes.goods.del);
 app.get('/goodsDes/:id',routes.goods.Des);
 app.post('/goodsModify',routes.goods.modify);
 app.get('/cart',routes.cart.show);
-app.get('/addToCart/:gid',routes.cart.add);
+app.post('/addToCart',routes.cart.add);   //从商品详情页中加入购物车
 app.get('/reduceFromCart/:gid',routes.cart.reduce);
 app.get('/jiesuan',routes.order.add);  
 app.get('/order',routes.order.show);

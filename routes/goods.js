@@ -1,11 +1,14 @@
 var goodsModel=require('../models').goodsModel;
 
 exports.show=function(req,res){       //商品显示
-	goodsModel.find({},function(err,data){
+	var num=req.params.pageid-1;
+	goodsModel.find({}).skip(num*6).limit(6).exec(function(err,data){
 		if(err){
 			console.log(err);
 		}else{
-			res.send(data);
+			goodsModel.find({}).count(function(err,sum){
+				res.send({count:sum,result:data});
+			});
 		}
 	});
 };
