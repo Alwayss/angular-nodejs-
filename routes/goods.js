@@ -19,7 +19,7 @@ exports.select=function(req,res){
 		if(err){
 			throw err;
 		}else{
-			res.send(data);
+			res.send({code:200,result:data});
 		}
 	});
 };

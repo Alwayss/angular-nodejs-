@@ -1,60 +1,8 @@
-﻿app.controller(
-    'searchCtrl',function($scope){
-        $scope.xiaomi=[{
-            gImg:"../images/2.png",
-            price:"1234",
-            discuss:"一条评论"
-        },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            },
-            {
-                gImg:"../images/2.png",
-                price:"1234",
-                discuss:"一条评论"
-            }
+﻿app.controller( 'searchCtrl',['$scope','SearchService','$state',function($scope,SearchService,$state){
 
 
+}]);
 
-
-
-        ]});/**
+/**
  * Created by admin on 2015/10/9.
  */

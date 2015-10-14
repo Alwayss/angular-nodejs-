@@ -27,13 +27,13 @@
         <div class="logo_content">
             <img src="images/logo.png" style="margin-top: 35px;float:left"/>
             <input list="phone" type="text" class="text" ng-model="name" />
-            <a href="javascript:" ui-sref=".search"><input type="button" value="搜索" class="btn" /></a>
+            <a href="javascript:" ><input type="button" value="搜索" class="btn" ng-click="searchpage()"/></a>
             <span class="tip">热门搜索：华为荣耀、小米4、红米note、oppo全网通</span>
             <datalist id="phone">
-                <option value="oppo">oppo</option>
-                <option value="iphone">iphone</option>
-                <option value="iphone4">iphone4</option>
-                <option value="小米">小米</option>
+                <option value="魅族"></option>
+                <option value="华为"></option>
+                <option value="三星"></option>
+                <option value="红米"></option>
             </datalist>
         </div>
     </div>

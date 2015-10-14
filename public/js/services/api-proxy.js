@@ -12,10 +12,10 @@ angular.module('api.proxy',['restangular'])
         var secondService=homeAngular.all('/goods');
         return {
             firstGoods: function () {            //定义请求方法
-                return firstService.customGETLIST('米');    
+                return firstService.customGET('米');
             },
             secondGoods:function(type){
-                return secondService.customGETLIST(type);
+                return secondService.customGET(type);
             }
 
         }
@@ -79,14 +79,25 @@ angular.module('api.proxy',['restangular'])
             }
         }
     }])
+    //从购物车减少商品数量
+    .factory('ReduceService',['Restangular',function(Restangular){
+        var reduceAngualr = Restangular.withConfig(function(Configurer){
+        });
+        var reduceService=reduceAngualr.all('/reduceFromCart');
+        return {
+            reduce:function(id){
+                return reduceService.customPOST(id);
+            }
+        }
+    }])
 //搜索
     .factory('SearchService',['Restangular',function(Restangular){
         var searchAngular = Restangular.withConfig(function(Configurer){
         });
-        var searchService=searchAngular.all('');
+        var searchService=searchAngular.all('/goods');
         return {
-            search:function(id){
-                return searchService.customGET(id);
+            search:function(name){
+                return searchService.customGET(name);
             }
         }
     }])

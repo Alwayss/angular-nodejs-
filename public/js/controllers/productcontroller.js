@@ -18,7 +18,7 @@ app.controller("des",['$scope','GetidService','$stateParams','$state','JoincarSe
     $scope.getsta=function(sta){
         $scope.stas=sta
     };
-//加入购物车请求
+//加入购物车
     $scope.user=$localStorage.user;
     $scope.getinfo=function(gid){
         if($scope.user!='' && $scope.user!=undefined && $scope.user!=null){

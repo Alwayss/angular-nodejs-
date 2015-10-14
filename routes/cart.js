@@ -60,18 +60,17 @@ exports.add=function(req,res){
 	});
 };
 exports.reduce=function(req,res){
-	cartModel.findOne({uId:req.session.user['_id'],gId:req.params.id},function(err,data){
+	cartModel.findOne({uid:req.body.uid,gid:req.body.gid},function(err,data){
 		if(err){
 			console.log(err);
 		}else{
 			if(data.gQuantity>1){
 				var num=data.gQuantity-1;
-				res.json({sum:num});
-				cartModel.update({uId:req.session.user['_id'],gId:req.params.id},{$set:{gQuantity:num}}, function(err){
+				cartModel.update({uid:req.body.uid,gid:req.body.gid},{$set:{gQuantity:num}}, function(err){
 					if(err){
 						console.log(err);
 					}else{
-						res.send(200);
+						res.send({code:200,result:num});
 					}
 				});
 			}

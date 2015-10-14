@@ -1,4 +1,4 @@
-*{margin: 0;padding: 0;list-style-type: none;}
+*{margin: 0;padding: 0;list-style-type: none;font-family: "Microsoft YaHei"}
 a{ text-decoration: none;}
 .w990{width:990px; height: auto; margin:0 auto;}
 
@@ -333,7 +333,10 @@ h2{
 .adiv_oul{
     width: 800px;
     height: 295px;
+    font-family: "Microsoft YaHei";
+    font-size: 17px;
 }
+
 .oul_oli{
     width:400px;
     height: 295px;
@@ -344,6 +347,8 @@ h2{
     height: 295px;
     border-right: 1px solid #c7c4c4;
     float: left;
+    font-family: "Microsoft YaHei";
+    font-size: 17px;
 }
 .oul_bli{
     width: 199px;

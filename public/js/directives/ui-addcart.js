@@ -9,6 +9,7 @@ app.directive('add',function($localStorage){
             });
         }
     }
-});/**
+});
+/**
  * Created by admin on 2015/10/12.
  */

@@ -28,7 +28,9 @@
     font-size:12px
 }
 .x_price{
-    color:#ff0000
+    color:#ff0000;
+    margin-top: 10px;
+    display: inline-block;
 }
 .x_describe1{
     font-family: 'Microsoft YaHei';

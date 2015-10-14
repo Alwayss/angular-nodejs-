@@ -41,7 +41,7 @@ app.get('/goodsDes/:id',routes.goods.Des);
 app.post('/goodsModify',routes.goods.modify);
 app.get('/cart/:id',routes.cart.show);
 app.post('/addToCart',routes.cart.add); //从商品详情页中加入购物车
-app.get('/reduceFromCart/:gid',routes.cart.reduce);
+app.post('/reduceFromCart',routes.cart.reduce);
 app.get('/jiesuan',routes.order.add);  
 app.get('/order',routes.order.show);
 app.get('/category',routes.category.show);

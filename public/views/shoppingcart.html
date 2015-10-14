@@ -82,7 +82,7 @@
                         <li>￥{{product.gPrice}}</li>
                         <li>武汉</li>
                         <li>
-                            <span  ng-click="minus($index)">-</span>
+                            <span add ac="{{product.gid}}" ng-click="minus($index)">-</span>
                             <span>{{product.gQuantity}}</span>
                             <span add ac="{{product.gid}}" ng-click="add($index)">+</span>
                         </li>

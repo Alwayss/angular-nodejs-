@@ -2,18 +2,18 @@
 <div style="width:100%;height:40px;background-color:#f2f2f2"></div>
 <div class="con_center1" ng-controller="searchCtrl">
     <ul>
-        <li ng-repeat="mobile in xiaomi">
+        <li ng-repeat="mobile in productArr">
             <a href="javascript:">
                 <img ng-src='{{mobile.gImg}}' class="ximg">
                 <div class="x_describe">
-                    小米&nbsp;
+                    {{mobile.gName}}&nbsp;
                     <span style="color:#ff0000;font-family:'Microsoft YaHei';font-weight: bold">4.2GB</span>内存版 &nbsp;白色&nbsp;
                     <span style="color:#ff0000;font-family:'Microsoft YaHei';font-weight: bold">移动4G</span>手机正品行货，全国联保！
                 </div>
-                <span class="x_price">¥{{mobile.price}}</span>
+                <span class="x_price">¥{{mobile.gPrice}}</span>
 
                 <div><span class="x_describe1">武汉有货</span>
-                    <a href="javascript:" class="x_discuss">{{mobile.discuss}}</a>
+                    <a href="javascript:" class="x_discuss">一条评论</a>
                 </div>
             </a>
         </li>
