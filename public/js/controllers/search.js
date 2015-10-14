@@ -2,10 +2,13 @@
  * Created by chy on 2015/9/29.
  */
 app.controller('Aaa',function($scope){
-    $scope.search=function(){   //搜索
-        if($scope.name=="小米"){
-            window.open('views/search.html','_self');
+    SearchService.search().then(function(res){
+        if(res.code==200){
+
+        }else{
 
         }
-    }
-})
+    }, function (err) {
+        alert("失败");
+    });
+});

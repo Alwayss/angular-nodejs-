@@ -7,7 +7,8 @@ app.controller("kindCtrl",function($scope){
         {gName:'三星手机',gName1:'Galaxy'},
         {gName:'苹果手机',gName1:'iphone5s'},
         {gName:'小米手机',gName1:'小米2s'},
-        {gName:'三星手机'},{gName:'三星手机'},
+        {gName:'三星手机',gName1:'Gla'},
+        {gName:'三星手机',gName1:'小米2s'},
         {gName:'其他电子产品',gName1:'U盘'}
     ]
 });

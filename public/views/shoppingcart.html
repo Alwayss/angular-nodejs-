@@ -36,12 +36,12 @@
         <div class="gwbottom">
             <ul class="gwbottom_top">
                 <li class="gwbottom_top_lia">
-                    <input id="opur" class="gwcheckbox" type="checkbox"
-                           ng-model="ss"
-                           ng-true-value="1"
-                           ng-false-value="0"
-                           ng-click="oput()" />
-                    <span>全选</span>
+                    <!--<input id="opur" class="gwcheckbox" type="checkbox"-->
+                           <!--ng-model="ss"-->
+                           <!--ng-true-value="1"-->
+                           <!--ng-false-value="0"-->
+                           <!--ng-click="oput()" />-->
+                    <!--<span>全选</span>-->
                 </li>
                 <li class="gwbottom_top_lib">
                     <span>商品信息</span>
@@ -51,7 +51,7 @@
                 </li>
                 <li class="gwbottom_top_lib">
                     <span>送货至</span>
-                    <input class="gwinputtext" type="text" />
+                    <input class="gwinputtext" type="text" value='武汉'/>
                 </li>
                 <li class="gwbottom_top_lib">
                     <span>数量</span>
@@ -72,22 +72,22 @@
                 <li class="gwdivb">
                     <ul>
                         <li>
-                            <input  id="haoi" type="checkbox" ng-model="hh"
-                                    ng-true-value="1"
-                                    ng-false-value="0"
-                                    ng-change="change()"/>
+                            <!--<input id="haoi" type="checkbox" ng-model="hh"-->
+                                    <!--ng-true-value="1"-->
+                                    <!--ng-false-value="0"-->
+                                    <!--ng-change="change()"/>-->
                             <img src="../images/2.png"/>
                         </li>
                         <li><a>{{product.gName}}</a></li>
-                        <li>{{product.gPrice| currency:'￥'}}</li>
+                        <li>￥{{product.gPrice}}</li>
                         <li>武汉</li>
                         <li>
-                            <span  ng-click="wgjia()">-</span>
+                            <span  ng-click="minus($index)">-</span>
                             <span>{{product.gQuantity}}</span>
-                            <span ng-click="wgjian()">+</span>
+                            <span add ac="{{product.gid}}" ng-click="add($index)">+</span>
                         </li>
-                        <li>{{product.gPrice | currency:'￥'}}</li>
-                        <li >{{ sum() | currency:'￥' }}</li>
+                        <li>￥{{product.gPrice}}</li>
+                        <li >￥{{ zprice($index)}}</li>
                     </ul>
 
                 </li>
@@ -97,12 +97,12 @@
     <div class="gwjs">
         <div class="gwjs_a">
             <ul class="gwjs_ula">
-                <li class="gwjs_ula_a">已选择<span>{{zz}}</span>件商品</li>
-                <li>商品金额：<span class="gwjs_ula_spana">{{zhg | currency:'￥'}}</span></li>
-                <li>运费:<span class="gwjs_ula_spana">{{iphone.fre }}</span></li>
+                <!--<li class="gwjs_ula_a">已选择<span>{{zz}}</span>件商品</li>-->
+                <li>商品金额：<span class="gwjs_ula_spana">{{count | currency:'￥'}}</span></li>
+                <li>运费:<span class="gwjs_ula_spana">{{ }}</span></li>
             </ul>
             <ul class="gwjs_ulb">
-                <li class="gwjs_ulb_b">应付金额：<span class="gwjs_ula_spana">{{zhggg | currency:'￥'}}</span></li>
+                <li class="gwjs_ulb_b">应付金额：<span class="gwjs_ula_spana">{{count | currency:'￥'}}</span></li>
                 <li><input type="button" value="去结算" /></li>
             </ul>
         </div>

@@ -25,6 +25,7 @@ app.controller("des",['$scope','GetidService','$stateParams','$state','JoincarSe
            console.log($scope.user.name);
             //登录之后将商品信息传入购物车
             var uid=$localStorage.user.id; //获取用户id
+            console.log(gid);
             JoincarService.productInfo({uid:uid,gid:gid}).then(function (res) {
                     console.log(res);
                    if(res=='OK'){

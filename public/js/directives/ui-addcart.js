@@ -5,7 +5,6 @@ app.directive('add',function($localStorage){
             ele.bind('click',function($http){
                 gid=attrs.ac;
                 //uid=$localStorage.user.id;
-
                 scope.getinfo(gid);    //调用控制器中的getinfo方法
             });
         }

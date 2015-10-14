@@ -95,7 +95,7 @@ a{ text-decoration: none;}
     height:54px;
     border:2px solid #ff9933;
     float:left;
-    margin-top: 39px;
+    margin-top: 23px;
     font-size: 24px;
 }
 .logo_content .btn{
@@ -179,6 +179,7 @@ a{ text-decoration: none;}
     margin-top:0;
 	position:absolute;
 	z-index:999;
+
 }
 .sidebar li 
 {
@@ -186,7 +187,7 @@ a{ text-decoration: none;}
     width: 220px;
     height: 64px;
     background:url(../images/da.jpg) no-repeat 190px 24px #333333;
-	font-family:"微软雅黑";
+	font-family:"Microsoft YaHei";
 	font-size:14px;
 	text-indent:30px;
 	color:#fff;
@@ -195,11 +196,11 @@ a{ text-decoration: none;}
 	border-bottom:1px solid #030303;
 }
 .sidebar li a{color:#fff;}
-.sidebar li dl{display:none;}
 .sidebar li dl
-{ 
+{
+    display:none;
 	position:absolute;
-	top:0px; 
+	top:0;
 	left:220px;
 	width:220px;
 	height:auto;

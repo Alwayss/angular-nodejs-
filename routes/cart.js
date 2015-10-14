@@ -16,10 +16,11 @@ exports.show=function(req,res){
 };
 exports.add=function(req,res){
 	console.log(req.body);
-	cartModel.findOne({gid:req.body.gid,uid:req.body.uid},function(err,data){
+	cartModel.findOne({uid:req.body.uid,gid:req.body.gid},function(err,data){
 		if(err){
 			console.log(err);
 		}else{
+			console.log(data);
 			if(data){    //若购物车中存在该件商品，使其gQuantity加1
 				var num=data.gQuantity+1;
 				cartModel.update({uid:req.body.uid,gid:req.body.gid},{$set:{gQuantity:num}},function(err){

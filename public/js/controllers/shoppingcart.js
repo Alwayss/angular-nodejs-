@@ -2,115 +2,95 @@
  * Created by admin on 2015/9/29.
  */
 
-app.controller('gwaa',['$scope','SendidService','$localStorage',function ($scope,SendidService,$localStorage) {
+app.controller('gwaa',['$scope','SendidService','$localStorage','JoincarService',function ($scope,SendidService,$localStorage,JoincarService) {
     var initCart=function(){
         var uid=$localStorage.user.id;
         SendidService.userId(uid).then(function(res){
             if(res.code==200){
-                console.log(res.result);
-                $scope.cartArr=res.result;
+                //console.log(res.result);
+                $scope.cartArr=res.result;//变量存储返回的数组
+                //单件商品的总价
+                 $scope.zprice=function(index)
+                {
+                    return $scope.cartArr[index].gPrice * $scope.cartArr[index].gQuantity;
+                };
+                //所有商品总价
+                $scope.Array=[];   //存储每件商品的总价
+                $scope.count=0;     //存储应付的总价
+                (function(){
+                    for(var i=0;i<$scope.cartArr.length;i++){
+                        $scope.Array.push($scope.cartArr[i].gPrice*$scope.cartArr[i].gQuantity);
+                   }
+                    for(var i=0;i<$scope.Array.length;i++){
+                        $scope.count+=$scope.Array[i];
+                    }
+                    return $scope.count;
+                })();
             }
         }, function (err) {
             alert("失败");
         });
     };
     initCart();
-    $scope.sum = function(){
-        return $scope.iphone.money * $scope.iphone.num;
-    };
-    $scope.suma = function(){
-        return $scope.iphonea.money * $scope.iphonea.numa;
-    };
-    var num = 1;
-    var numa= 1;
-    $scope.wgjia = function () {
-        if(num==1){
-            num=1;
-        }
-        else{
-            num -= 1;
-            $scope.iphone.num= num;
-        }
-        $scope.hg();
-    }
-    $scope.wgjian = function (){
-        num += 1;
-        $scope.iphone.num= num;
-        $scope.hg();
-    };
-    $scope.wgjiaa = function () {
-        if(numa==1){
-            numa=1;
-        }
-        else{
-            numa -= 1;
-            $scope.iphonea.numa= numa;
-        }
-        $scope.hg();
-    }
-    $scope.wgjiana = function (){
-        numa += 1;
-        $scope.iphonea.numa= numa;
-        $scope.hg();
-    };
+//商品增加
+    $scope.add=function(index) {
+        $scope.cartArr[index].gQuantity++;
+        $scope.count = parseInt($scope.count) + parseInt($scope.cartArr[index].gPrice);
 
+        $scope.user=$localStorage.user;
+        $scope.getinfo=function(gid){
+            if($scope.user!='' && $scope.user!=undefined && $scope.user!=null){
+                console.log($scope.user.name);
+                //登录之后将商品信息传入购物车
+                var uid=$localStorage.user.id; //获取用户id
+                JoincarService.productInfo({uid:uid,gid:gid}).then(function (res) {
+                    console.log(res);
+                    if(res=='OK'){
+                        console.log('success');
+                    }else{
 
-    $scope.oput=function(){
-        if(document.getElementById('opur').checked==true){
-            document.getElementById('haoi').checked=true;
-            document.getElementById('haoii').checked=true;
-        }else{
-            document.getElementById('haoi').checked=false;
-            document.getElementById('haoii').checked=false;
-        }
-
-        if($scope.ss== 0){
-            $scope.hh = 1;
-            $scope.gg = 1;
-        }else{
-            $scope.hh = 0;
-            $scope.gg = 0;
-        }
-        $scope.change();
-    };
-
-    $scope.spje=function(){
-        return  $scope.suma() + $scope.sum()
-    };
-    $scope.$watch($scope.spje,function(newVal){
-        $scope.iphone.fre = newVal >= 10000 ? 0 : 20;
-    });
-
-    $scope.zgje=function(){
-        return  $scope.spje() + $scope.iphone.fre
-    };
-    $scope.ss = 0;
-    $scope.hh = 0;
-    $scope.gg = 0;
-    $scope.zz = 0;
-    $scope.zhg = 0;
-    $scope.zhggg = 0;
-    $scope.change = function () {
-        $scope.zz = parseInt($scope.hh)+parseInt($scope.gg);
-        $scope.hg = function () {
-            if($scope.hh == 1){
-                $scope.z = $scope.sum();
-            }
-            else{
-                $scope.z = 0;
-            }
-            if($scope.gg == 1){
-                $scope.h = $scope.suma();
+                    }
+                }, function (err) {
+                    alert(err.statusText);
+                });
             }else{
-                $scope.h = 0;
+                alert("您还未登录");
+                $state.go('login')
             }
-            $scope.zhg = $scope.z+$scope.h;
-            $scope.zhggg = $scope.zhg + $scope.iphone.fre;
         };
-        $scope.hg();
+    };
+//商品减少
+    $scope.minus=function(index){
+        if($scope.cartArr[index].gQuantity==0){return false;}
+        else{
+        $scope.cartArr[index].gQuantity--;
+        $scope.count=parseInt($scope.count)-parseInt($scope.cartArr[index].gPrice);
+
+            //$scope.user=$localStorage.user;
+            //$scope.getinfo=function(gid){
+            //    if($scope.user!='' && $scope.user!=undefined && $scope.user!=null){
+            //        console.log($scope.user.name);
+            //        //登录之后将商品信息传入购物车
+            //        var uid=$localStorage.user.id; //获取用户id
+            //        JoincarService.productInfo({uid:uid,gid:gid}).then(function (res) {
+            //            console.log(res);
+            //            if(res=='OK'){
+            //                console.log('success');
+            //            }else{
+            //
+            //            }
+            //        }, function (err) {
+            //            alert(err.statusText);
+            //        });
+            //    }else{
+            //        alert("您还未登录");
+            //        $state.go('login')
+            //    }
+            //};
+        }
     }
 }]);
-
+//
 /**
  * Created by admin on 2015/10/10.
  */

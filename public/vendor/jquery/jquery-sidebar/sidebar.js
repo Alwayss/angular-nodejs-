@@ -15,5 +15,4 @@ $(document).ready(function(){
 	}).live('mouseleave',function(){
 		$(this).find("dl").css("display","none");
 	});
-
 });

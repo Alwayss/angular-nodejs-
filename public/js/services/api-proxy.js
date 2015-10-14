@@ -2,6 +2,7 @@
  * Created by admin on 2015/9/22.
  */
 angular.module('api.proxy',['restangular'])
+    //首页品牌特卖部分自动加载
     .factory('HomeService',['Restangular',function(Restangular){// 现在我们已经在LoginService中访问了Restangular
         var homeAngular = Restangular.withConfig(function (Configurer) {
             //服务配置
@@ -19,6 +20,7 @@ angular.module('api.proxy',['restangular'])
 
         }
     }])
+    //登录
     .factory('LoginService',['Restangular',function(Restangular){// 现在我们已经在LoginService中访问了Restangular
     var loginAngular = Restangular.withConfig(function (Configurer) {
         //服务个性化配置
@@ -58,7 +60,6 @@ angular.module('api.proxy',['restangular'])
     //获取id请求
 .factory('GetidService',['Restangular',function(Restangular){
         var getidAngualr = Restangular.withConfig(function(Configurer){
-
         });
         var getidService=getidAngualr.all('/goodsDes');
         return {
@@ -67,15 +68,25 @@ angular.module('api.proxy',['restangular'])
             }
         }
     }])
-    //
+    //商品id到购物车
     .factory('SendidService',['Restangular',function(Restangular){
         var sendidAngualr = Restangular.withConfig(function(Configurer){
-
         });
         var sendidService=sendidAngualr.all('/cart');
         return {
             userId:function(id){
                 return sendidService.customGET(id);
+            }
+        }
+    }])
+//搜索
+    .factory('SearchService',['Restangular',function(Restangular){
+        var searchAngular = Restangular.withConfig(function(Configurer){
+        });
+        var searchService=searchAngular.all('');
+        return {
+            search:function(id){
+                return searchService.customGET(id);
             }
         }
     }])
