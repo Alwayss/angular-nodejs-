@@ -23,7 +23,7 @@ app
     };
 
         $scope.user=$localStorage.user;
-        console.log($scope.user);
+        //console.log($scope.user);
     $scope.login=function(){   //点击触发
           LoginService.userLogin({username:$scope.regText.name,password:$scope.regPassword.name}).then(function (res) {
               var res=res;

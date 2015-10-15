@@ -36,19 +36,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state("app.shoppingcart", {
             url: "/shoppingcart",
             templateUrl: "views/shoppingcart.html"
-        })
-        ;
-        //加入购物车
-        //.state("addToCart", {
-        //    url: "/addToCart",
-        //    templateUrl: "views/ProductDetails.html", //购物车地址没换
-        //    controller:function(JoincarService,$scope){
-        //        JoincarService.addToCart(id).then(function(res){
-        //            console.log(res);
-        //            $scope.data=res;
-        //        }, function (err) {
-        //            alert(JSON.stringify(err));
-        //        });
-        //    }
-        //})
         });
+});

@@ -40,7 +40,7 @@ app.controller('gwaa',['$scope','SendidService','$localStorage','JoincarService'
         $scope.user=$localStorage.user;
         $scope.getinfo=function(gid){
             if($scope.user!='' && $scope.user!=undefined && $scope.user!=null){
-                console.log($scope.user.name);
+                //console.log($scope.user.name);
                 //登录之后将商品信息传入购物车
                 var uid=$localStorage.user.id; //获取用户id
                 JoincarService.productInfo({uid:uid,gid:gid}).then(function (res) {

@@ -51,40 +51,14 @@
         </ul>
     </div>
     <div class="con_bottom_adiv" >
+        <div class="oul_oli"><img src="images/1.png"/></div>
         <ul class="adiv_oul">
-            <li class="oul_oli"><img src="images/1.png"/></li>
-            <li class="oul_ali" ng-click="jump()">
-                <img ng-src="{{arr[0].gImg}}"/>
-                <div><a href="#/app/goodsDes/{{arr[0]['_id']}}">{{arr[0].gName}}</a></div>
-                <h3>¥{{arr[0].gPrice}}</h3>
-            </li>
-            <li class="oul_ali">
-                <img ng-src="{{arr[1].gImg}}" />
-                <div><a href="#/app/goodsDes/{{arr[1]['_id']}}">{{arr[1].gName}}</a></div>
-                <h3>¥{{arr[1].gPrice}}</h3>
-            </li>
-        </ul>
-        <ul class="adiv_oul">
-            <li class="oul_ali">
-                <img ng-src="{{arr[2].gImg}}" />
-                <div><a href="#/app/goodsDes/{{arr[2]['_id']}}">{{arr[2].gName}}</a></div>
-                <h3>¥{{arr[2].gPrice}}</h3>
-            </li>
-            <li class="oul_ali">
-                <img ng-src="{{arr[3].gImg}}" />
-                <div><a href="#/app/goodsDes/{{arr[3]['_id']}}">{{arr[3].gName}}</a></div>
-                <h3>¥{{arr[3].gPrice}}</h3>
-            </li>
-            <li class="oul_bli">
-                <img ng-src="{{arr[4].gImg}}" />
-                <div><a href="#/app/goodsDes/{{arr[3]['_id']}}">{{arr[4].gName}}</a></div>
-                <h3>¥{{arr[4].gPrice}}</h3>
-            </li>
-            <li class="oul_bli">
-                <img ng-src="{{arr[5].gImg}}"/>
-                <div><a href="#/app/goodsDes/{{arr[5]['_id']}}">{{arr[5].gName}}</a></div>
-                <h3>¥{{arr[5].gPrice}}</h3>
-            </li>
+                <li class="oul_ali" ng-repeat="app in arr" ng-click="getid($index)" ui-sref="app.goodsDes">
+                    <img ng-src="{{app.gImg}}"/>
+                    <div>{{app.gName}}</div>
+                    <h3>¥{{app.gPrice}}</h3>
+                </li>
+
         </ul>
     </div>
 </div>

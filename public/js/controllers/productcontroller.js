@@ -4,8 +4,7 @@ app.controller("kindCtrl",function($scope){
 });
 app.controller("des",['$scope','GetidService','$stateParams','$state','JoincarService','$localStorage',function($scope,GetidService,$stateParams,$state,JoincarService,$localStorage){
  //获取商品id
-    console.log(typeof $stateParams.id);
-    GetidService.productId($stateParams.id).then(function(res){
+    GetidService.productId($localStorage.id).then(function(res){
         $scope.data=res;
     }, function (err) {
         alert(JSON.stringify(err));
@@ -22,12 +21,12 @@ app.controller("des",['$scope','GetidService','$stateParams','$state','JoincarSe
     $scope.user=$localStorage.user;
     $scope.getinfo=function(gid){
         if($scope.user!='' && $scope.user!=undefined && $scope.user!=null){
-           console.log($scope.user.name);
+           //console.log($scope.user.name);
             //登录之后将商品信息传入购物车
             var uid=$localStorage.user.id; //获取用户id
-            console.log(gid);
+            //console.log(gid);
             JoincarService.productInfo({uid:uid,gid:gid}).then(function (res) {
-                    console.log(res);
+                    //console.log(res);
                    if(res=='OK'){
                        console.log('success');
                    }else{
