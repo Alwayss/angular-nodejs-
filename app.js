@@ -31,10 +31,11 @@ app.use(function(req,res,next){           //将session绑定值本地session
 });
 
 app.get('/goods/:goodsname',routes.goods.select);
+app.get('/search/:goodsname',routes.goods.search);
 app.post('/adminLogin',routes.admin.adminLogin);
 app.post('/userReg',routes.user.userReg);
 app.post('/userLogin',routes.user.userLogin);
-app.get('/goods/page/:pageid',routes.goods.show);
+app.get('/goods/paged/:pageid',routes.goods.show);
 app.post('/goodsAdd',routes.goods.add);
 app.get('/goodsDel/:id',routes.goods.del);
 app.get('/goodsDes/:id',routes.goods.Des);

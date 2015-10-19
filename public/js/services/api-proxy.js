@@ -94,7 +94,7 @@ angular.module('api.proxy',['restangular'])
     .factory('SearchService',['Restangular',function(Restangular){
         var searchAngular = Restangular.withConfig(function(Configurer){
         });
-        var searchService=searchAngular.all('/goods');
+        var searchService=searchAngular.all('/search');
         return {
             search:function(name){
                 return searchService.customGET(name);

@@ -1,6 +1,6 @@
 var goodsModel=require('../models').goodsModel;
 
-exports.show=function(req,res){       //商品显示
+exports.show=function(req,res){       //后台商品分页显示
 	var num=req.params.pageid-1;
 	goodsModel.find({}).skip(num*6).limit(6).exec(function(err,data){
 		if(err){
@@ -12,7 +12,7 @@ exports.show=function(req,res){       //商品显示
 		}
 	});
 };
-exports.select=function(req,res){
+exports.search=function(req,res){     //前台搜索商品
 	var name=req.params.goodsname;
 	var pattern=new RegExp(name);
 	goodsModel.find({gName:pattern},function(err,data){
@@ -23,6 +23,18 @@ exports.select=function(req,res){
 		}
 	});
 };
+exports.select=function(req,res){     //前台搜索商品
+	var name=req.params.goodsname;
+	var pattern=new RegExp(name);
+	goodsModel.find({gName:pattern}).limit(6).exec(function(err,data){
+		if(err){
+			throw err;
+		}else{
+			res.send({code:200,result:data});
+		}
+	});
+};
+
 exports.add=function(req,res){           //商品添加
 	var goods={
 		gName: req.body.gName,
