@@ -39,6 +39,7 @@ exports.add=function(req,res){           //商品添加
 	var goods={
 		gName: req.body.gName,
 		gPrice: req.body.gPrice,
+		gImg:req.body.gImg,
 		gDescription: req.body.gDescription,
 		gCategory: req.body.gCategory,
 		gSum: req.body.gSum
@@ -53,11 +54,11 @@ exports.add=function(req,res){           //商品添加
 	});
 };
 exports.del=function(req,res){           //删除商品
-	goodsModel.remove({_id:req.params.id},function(err){
+	goodsModel.remove({_id:{$in:req.body.list}},function(err){
 		if(err){
 			console.log(err);
 		}else{
-			res.send(200);
+			res.send({code:200});
 		}
 	});
 };
@@ -77,6 +78,7 @@ exports.modify=function(req,res){       //修改商品信息
 	var goods={
 		gName: req.body.gName,
 		gPrice: req.body.gPrice,
+		gImg:req.body.gImg,
 		gDescription: req.body.gDescription,
 		gCategory: req.body.gCategory,
 		gSum: req.body.gSum
