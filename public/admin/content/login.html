@@ -1,0 +1,27 @@
+
+<div class="login_body" ng-controller="denglCtrl">
+<div class="login_log">
+   <img src="static/image/logo2.png" class="img_j">
+    <img src="static/image/555.png" >
+</div>
+<div class="login_content">
+    <div style="font-size: 12px;color:red;text-align: center;" ng-show="authError">
+        {{authError}}
+    </div>
+    <input type="text" id="txt_username" placeholder="请输入用户名" class="login_user" ng-model="admin.username" required/><br>
+    <input type="password"  id='pwd' placeholder="请输入密码" ng-model="admin.pwd" class="login_user" required/><br>
+    <div class="login_check"  ><!--<input   id="ck_rmbUser" type="checkbox" class="login_checkbox"/>--><img src="static/image/333.png"id="photo" ><span>自动登录</span></div>
+    <button class="login_user" id="login_button" ng-click="AdminLogin()" ng-disabled="!admin.username||!admin.pwd">登录</button>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+
+        $("#photo").click(function(){
+            if($("#photo").attr("src")=="static/image/44.png"){
+                $("#photo").attr("src", "static/image/333.png");}
+            else{  $("#photo").attr("src", "static/image/44.png");}
+        });
+
+    });
+</script>

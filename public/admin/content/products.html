@@ -1,0 +1,132 @@
+<div ng-controller="spgld" style="width:100% ;height:100%">
+    <div class="spglym">
+        <ul class="hsadc">
+            <li class="hsadc_left"><input type="text" style="outline: none" ng-model="productSearch" /> </li>
+            <li class="hsadc_right">
+                <a ng-click="up()">上一页</a>
+                <a ng-click="down()">下一页</a>
+                <a>第<span>{{page}}</span>页</a>
+                <a>共<span>{{total}}</span>页</a>
+            </li>
+        </ul>
+        <ul class="spgl">
+            <li class="spgl_liaa ">
+                <input class="spgl_lia_inp" type="checkbox" value="a" name="a"/>
+            </li>
+            <li class="spgl_liab">
+                <span>缩略图</span>
+            </li>
+            <li class="spgl_lib">商品名称</li>
+            <li class="spgl_lic">上传时间</li>
+            <li class="spgl_lic">商品标签</li>
+            <li class="spgl_lid">库存</li>
+        </ul>
+        <div class="spnr">
+
+            <ul ng-repeat="time in phone|filter:{gName:productSearch}">
+                <li class="spnr_liaa ">
+                    <input type="checkbox" name="b" ng-model="time.check" ng-checked="time.check"
+                           ng-init="time.check=false"/>
+                </li>
+                <li class="spnr_liab ">
+                    <img src="static/image/2.png" width="61px" height="82px"/>
+                </li>
+                <li class="spnr_lib ">{{time.gName}}</li>
+                <li class="spnr_lic ">2012.3.4</li>
+                <li class="spnr_lic ">{{time.gCategory}}</li>
+                <li class="spnr_lid ">{{time.gSum}}</li>
+            </ul>
+        </div>
+        <div class="foot">
+            <ul>
+                <li class="first1_li" class="btn btn-primary btn-lg" data-toggle="modal"
+                    data-target="#myModal"><img src="static/image/1234.png"><a
+                        style="position: relative;top:10px;">添加商品</a></li>
+                <li class="first2_li"><img src="static/image/222.png"><a style="position: relative;top:15px;">商品上架</a>
+                </li>
+                <li><img src="static/image/5875.png"><a>商品下架</a></li>
+                <li><img src="static/image/5784.png"><a ng-click="product_delete()">删除商品</a></li>
+                <li><img src="static/image/666.png"><a>修改价格</a></li>
+            </ul>
+        </div>
+    </div>
+   <!-- 模态框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true" style="border-radius: 0;border: 0">
+        <div class="modal-dialog"
+             style="width:81%;text-align: center;position:relative;left:8%;height:90%;border-radius: 0;border: 0">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <div class="modal-title" id="myModalLabel"
+                         style="font-size:30px;font-family: 'Microsoft YaHei';font-weight: bold;color:#3399ff;letter-spacing:7px;">
+                        添加商品
+                    </div>
+                </div>
+                <div class="modal-body" >
+                    <ng-form name=someForm>
+                    <div class="input_1"><label class="inputLabel1" >商品名称:</label><input
+                         name="proName"   type="text" placeholder="请输入商品名称" class="_input" ng-model="pName" ng-minlength="6"  required>
+                        <div class="alert-danger" ng-show="someForm.proName.$error.pattern||someForm.proName.$invalid" >
+                           *不少于6个字符
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="input_2"><label class="inputLabel1" >商品价格:</label><input
+                            name="proPrice"  type="text" placeholder="请输入商品价格" class="_input" ng-model="pPrice" pattern="^\d+\.\d{2}$" required>
+                        <div class="alert-danger" ng-show="someForm.proPrice.$error.pattern||someForm.proPrice.$invalid">
+                            * 请输入正确的价格，例：2000.00
+                        </div>
+                    </div>
+                    <br>
+                    <div class="input_2"><label class="inputLabel1">商品标签:</label><input name="proTag"
+                            type="text" placeholder="请输入商品标签" class="_input" ng-model="pDescription" required>
+                    </div>
+                    <br>
+
+                    <div class="input_2"><label class="inputLabel2">库存:</label><input name="proStorage"
+                            type="text" placeholder="请输入商品库存" class="__input" pattern="^\d{1,10}$"
+                            ng-model="pSum" required>
+                        <div class="alert-danger" ng-show="someForm.proStorage.$error.pattern||someForm.proStorage.$invalid">
+                            * 请输入正确的库存，例：200
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="input_2"><label class="inputLabel2">类型:</label><input
+                            type="text" placeholder="请输入商品类型" class="__input" name="proType"
+                            ng-model="pCategory" required></div>
+                    <br>
+                        </ng-form>
+                  <!-- <label class="inputLabel1" >商品图片:</label>
+                    <div class="file-box">
+                        <form action="" enctype="multipart/form-data" method="post">
+                        <input type="file" name="upload" multiple="multiple" id="textfield">
+                        <input type="submit" value="上传" onclick="onLoad()">
+                    </form>
+                    </div>
+                </div>-->
+
+                <div class="modal-footer" style="text-align: center;">
+
+                    <button ng-click="submit1()" class="btn btn-primary" ng-disabled="someForm.proTag.$invalid||someForm.proType.$invalid||someForm.proStorage.$invalid||someForm.proPrice.$invalid||someForm.proName.$invalid"
+                            style="font-size:24px;font-family:'Microsoft YaHei';font-weight:bold;background-color: #ff9900;border:0;border-radius: 0;width:16%;height:50px;margin-top: 1%">
+                        提交
+                    </button>
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal"
+                            style="color:#e3e3e3;font-size:24px;font-family:'Microsoft YaHei';font-weight:bold;background-color: #4d4c4c;border:0;border-radius: 0;width:16%;height:50px;margin-left: 14%;margin-top: 1% ">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/admin/js/jquery_product.js"></script>
+
+</div>

@@ -1,0 +1,178 @@
+body,html{
+    height:100%;
+    width:100%
+}
+.admin_Jiujiu{
+    width:100%;
+    height:100%;
+    margin:0 auto;
+    background-color: #333333
+}
+.bg {
+   width:14.74%;
+    height:60px;
+    float: left;
+    padding-left:10px;
+    padding-top: 16px;
+    margin-top: -5px;
+}
+.head{
+    height:7.9%;
+    width:85.26%;
+    background-color: #3fa0e4;
+    float: left;
+   color:white;
+    font-size:14px;
+font-family: 'Microsoft YaHei';
+    letter-spacing: 2px;
+    padding-left: 16px;
+    padding-top: 18px;
+}
+.head div{
+    padding-right:20px ;
+    letter-spacing: 10px;
+}
+.content{
+    width:85.26%;
+    height:92.3%;
+    background-color: white;
+   float:left
+}
+.aside{
+    height:92.3%;
+    width:14.74%;
+
+    float: left;
+}
+
+.panel-group {
+    margin-bottom: 0px;
+}
+
+.panel-title a {
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #f39800;
+    text-decoration: none;
+
+}
+
+.list-group  {
+    border: 0;
+    border-radius: 0;
+}
+
+.list-group li {
+    background-color: #333333;
+    border: 0;
+    border-radius: 0;
+}
+
+.list-group li .son {
+    color: #cccccc;
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.panel-group {
+    margin-bottom: 0px;
+}
+
+.list-group-item {
+    background-color: #333333
+}
+/**/
+
+/*登录页面
+*/
+.login_log{
+    width: 900px;
+    height: 115px;
+   /* margin: 0 auto;
+    margin-top:168px;
+    text-align: center*/
+    position:relative;
+    top:168px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.login_body{
+      width:1199px;
+      height:957px;
+     background-image: url('../static/image/bj.jpg');
+    position: relative;
+    margin: 0 auto;
+    /*background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position: center*/
+}
+.login_content{
+    width: 619px;
+    height: 350px;
+    background-color: #f7a554;
+    margin: 0 auto;
+    position:relative;
+    top:200px;
+}
+.img_j{
+    position: relative;
+    top:20px;
+    left: -320px;
+}
+.login_user{
+    margin-top: 51px;
+    margin-left: 100px;
+    background-image: url('../static/image/11.png') ;
+    background-repeat: no-repeat;
+    background-position: left 25px top 8px;
+    border-radius: 40px;
+    height:43px;
+    width: 420px;
+    outline: none;
+    border:2px solid #fdb981;
+   font-size: 16px;
+    letter-spacing: 2px;
+    background-color:#f7a554 ;
+    text-align: center;
+}
+#pwd{
+    background-image: url('../static/image/22.png') ;
+}
+.login_user::-webkit-input-placeholder {
+    color: #fefaf6;
+}
+.login_user:-moz-placeholder {
+    color: #fefaf6;
+}
+/*
+.login_user:-ms-input-placeholder {
+    color: #fefaf6;
+}​*/
+.login_check{
+    color:#ffffff;
+    position:relative;
+    left:420px;
+    top:20px;
+}
+/*input[type=checkbox] {
+    visibility: hidden;
+}
+.login_checkbox{
+    background-image: url('image/333.png');
+}*/
+#photo{
+    margin-right: 6px;
+}
+#login_button{
+    margin-top: 35px;
+    background-image: url('');
+    background-color: #febb83;
+    color:#fffb50;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}

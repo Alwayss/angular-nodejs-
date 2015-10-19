@@ -1,0 +1,36 @@
+<div class="spglym" ng-controller="ypyjnr">
+    <ul class="hsadc">
+        <li class="hsadc_left"><input type="text" /></li>
+        <li class="hsadc_right">
+            <a href="script;">上一页</a>
+            <a href="script;">下一页</a>
+            <a href="script;">共<span>{{heo.gy}}</span>页</a>
+        </li>
+    </ul>
+    <ul class="yjbiaot">
+        <li class="yjbiaot_la"><input type="checkbox" name="aa" value="bb" /></li>
+        <li class="yjbiaot_lb">邮件标题</li>
+        <li class="yjbiaot_lc">发布者</li>
+        <li class="yjbiaot_ld">发送时间</li>
+    </ul>
+    <div class="yjnr">
+        <ul class="yjnrde" ng-repeat="data in xpyjrn">
+            <li class="yjnr_la ">
+            <input type="checkbox"  name="bb"value="cc"/></li>
+            <li class="yjnr_lb">{{data.bt}}</li>
+            <li class="yjnr_lc">{{data.fbz}}</li>
+            <li class="yjnr_ld">{{data.fssj}}</li>
+        </ul>
+
+
+    </div>
+</div>
+<div class="foot" style="height:52px;top: 728px;">
+    <ul>
+        <li class="first2_li" style="float: right;width:125px"><img src="static/image/5784.png" ><a style="position: relative;top:15px;">删除</a></li>
+        <li class="first1_li" style="float: right;width:125px"><img src="static/image/mail.png" style="top:13px;"><a style="position: relative;top:15px">收件</a></li>
+    </ul>
+</div>
+</div>
+</div>
+        <script src="/admin/js/jquery_product.js">   </script>
