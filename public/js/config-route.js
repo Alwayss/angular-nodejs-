@@ -1,5 +1,5 @@
 app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/app/content");  //Ä¬ÈÏ¼ÓÔØapp.htmlÒ³Ãæ
+    $urlRouterProvider.when("", "/app/content");  //Ä¬ï¿½Ï¼ï¿½ï¿½ï¿½app.htmlÒ³ï¿½ï¿½
 
     $stateProvider
 
@@ -12,29 +12,35 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/content',
             templateUrl: 'views/content.html'
         })
-        //µã»÷ÉÌÆ·½øÈëÏêÇéÒ³
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³
         .state("app.goodsDes", {
             url: "/goodsDes/:id",
             templateUrl: "views/ProductDetails.html"
         })
-        //ËÑË÷
+        //ï¿½ï¿½ï¿½ï¿½
         .state("app.search", {
             url: "/search",
             templateUrl: "views/search.html"
         })
-        //µÇÂ¼
+        //ï¿½ï¿½Â¼
         .state("login", {
             url: "/login",
             templateUrl: "views/login.html"
         })
-        //×¢²á
+        //×¢ï¿½ï¿½
         .state("reg", {
             url: "/reg",
             templateUrl: "views/regist.html"
         })
-        //¹ºÎï³µ
+        //ï¿½ï¿½ï¿½ï³µ
         .state("app.shoppingcart", {
             url: "/shoppingcart",
             templateUrl: "views/shoppingcart.html"
-        });
+        })
+
+        .state("admin",{
+            abstract: true,
+            url: "/admin",
+            templateUrl: "admin/index.html"
+        })
 });
